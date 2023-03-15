@@ -1,0 +1,59 @@
+[
+  {
+    "id": 3,
+    "user_id": 2,
+    "model_type": "Marvel\\Database\\Models\\Review",
+    "model_id": 1,
+    "message": "xvcgfdgdfg",
+    "created_at": "2022-07-26T04:35:51.000000Z",
+    "updated_at": "2022-07-26T04:35:51.000000Z",
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "model_type": "Marvel\\Database\\Models\\Review",
+    "model_id": 21,
+    "message": "this is abusive reports",
+    "created_at": "2022-07-26T02:38:16.000000Z",
+    "updated_at": "2022-07-26T02:38:16.000000Z",
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 1,
+    "user_id": 2,
+    "model_type": "Marvel\\Database\\Models\\Review",
+    "model_id": 78,
+    "message": "this is a abusive report",
+    "created_at": "2022-07-25T05:27:17.000000Z",
+    "updated_at": "2022-07-25T05:27:17.000000Z",
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  }
+]

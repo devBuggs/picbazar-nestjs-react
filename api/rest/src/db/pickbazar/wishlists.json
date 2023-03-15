@@ -1,0 +1,978 @@
+[
+  {
+    "id": 945,
+    "name": "Forest Killer",
+    "slug": "forest-killer",
+    "description": "Cerebral suspenser is a kidney combining the suspenser and cerebral fabrication stripes. It's generally used to describe literature or flicks that deal with cerebral narratives in a suspenser or thrilling setting.\nIn terms of environment and convention, it's a subgenre of the broader ranging suspenser narrative structure, with parallels to Gothic and operative fabrication in the sense of occasionally having a\" dissolving sense of reality\". It's frequently told through the standpoint of psychologically stressed characters, revealing their distorted internal comprehensions and fastening on the complex and frequently tortured connections between compulsive and pathological characters Cerebral suspensers frequently incorporate rudiments of riddle, drama, action, and paranoia. The kidney is nearly related to and occasionally overlaps with the cerebral horror kidney, the ultimate generally involving further horror and terror rudiments and themes and further disturbing or shocking scripts.",
+    "type_id": 8,
+    "price": 260,
+    "shop_id": 7,
+    "sale_price": null,
+    "language": "en",
+    "min_price": 260,
+    "max_price": 260,
+    "sku": "hgjkhjkjhgfdsfhxvcbnhgj+++g+5dfg+6",
+    "quantity": 500,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "1 pc",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": 1614,
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1614/Thriller.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1614/conversions/Thriller-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-12-12T18:22:11.000000Z",
+    "updated_at": "2022-01-02T08:40:14.000000Z",
+    "author_id": 5,
+    "manufacturer_id": 9,
+    "is_digital": 1,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 7,
+      "owner_id": 1,
+      "name": "Books Shop",
+      "slug": "books-shop",
+      "description": "This is the book shop. All the publications sells their book under this book shop",
+      "cover_image": {
+        "id": 1374,
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1374/Cover.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1374/conversions/Cover-thumbnail.jpg"
+      },
+      "logo": {
+        "id": 1613,
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1613/Publisher-logo.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1613/conversions/Publisher-logo-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "8021",
+        "city": "zurich",
+        "state": "California",
+        "country": "Switzerland",
+        "street_address": "44444"
+      },
+      "settings": {
+        "contact": "0799302967",
+        "socials": [],
+        "website": null,
+        "location": []
+      },
+      "created_at": "2021-12-07T16:47:07.000000Z",
+      "updated_at": "2021-12-26T09:48:16.000000Z"
+    }
+  },
+  {
+    "id": 941,
+    "name": "The Serial Killer",
+    "slug": "the-serial-killer",
+    "description": "Cerebral suspenser is a kidney combining the suspenser and cerebral fabrication stripes. It's generally used to describe literature or flicks that deal with cerebral narratives in a suspenser or thrilling setting.\nIn terms of environment and convention, it's a subgenre of the broader ranging suspenser narrative structure, with parallels to Gothic and operative fabrication in the sense of occasionally having a\" dissolving sense of reality\". It's frequently told through the standpoint of psychologically stressed characters, revealing their distorted internal comprehensions and fastening on the complex and frequently tortured connections between compulsive and pathological characters Cerebral suspensers frequently incorporate rudiments of riddle, drama, action, and paranoia. The kidney is nearly related to and occasionally overlaps with the cerebral horror kidney, the ultimate generally involving further horror and terror rudiments and themes and further disturbing or shocking scripts.",
+    "type_id": 8,
+    "price": 200,
+    "shop_id": 7,
+    "sale_price": null,
+    "language": "en",
+    "min_price": 200,
+    "max_price": 200,
+    "sku": "654561654+58949846liuhygftdsf",
+    "quantity": 500,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "1 pc",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": 1618,
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1618/Thriller-4.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1618/conversions/Thriller-4-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-12-12T17:54:13.000000Z",
+    "updated_at": "2022-01-02T08:41:10.000000Z",
+    "author_id": 4,
+    "manufacturer_id": 8,
+    "is_digital": 1,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 7,
+      "owner_id": 1,
+      "name": "Books Shop",
+      "slug": "books-shop",
+      "description": "This is the book shop. All the publications sells their book under this book shop",
+      "cover_image": {
+        "id": 1374,
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1374/Cover.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1374/conversions/Cover-thumbnail.jpg"
+      },
+      "logo": {
+        "id": 1613,
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1613/Publisher-logo.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1613/conversions/Publisher-logo-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "8021",
+        "city": "zurich",
+        "state": "California",
+        "country": "Switzerland",
+        "street_address": "44444"
+      },
+      "settings": {
+        "contact": "0799302967",
+        "socials": [],
+        "website": null,
+        "location": []
+      },
+      "created_at": "2021-12-07T16:47:07.000000Z",
+      "updated_at": "2021-12-26T09:48:16.000000Z"
+    }
+  },
+  {
+    "id": 755,
+    "name": "Melinda's Banana Chips",
+    "slug": "melinda-s-banana-chips",
+    "description": "Banana chips, with origins in Kerala, India and Indonesia are dried, generally crispy slices of bananas. They can be covered with sugar or honey and have a sweet taste, or are more commonly fried in oil and spices and have a salty or spicy taste.",
+    "type_id": 7,
+    "price": 1.59,
+    "shop_id": 6,
+    "sale_price": null,
+    "language": "en",
+    "min_price": 1.5899999999999999,
+    "max_price": 1.5899999999999999,
+    "sku": "569874521475",
+    "quantity": 50,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "75g",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": 1207,
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1207/Bananas-2.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1207/conversions/Bananas-2-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-10-02T13:25:02.000000Z",
+    "updated_at": "2021-12-22T17:06:24.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 6,
+      "owner_id": 1,
+      "name": "Grocery Shop",
+      "slug": "grocery-shop",
+      "description": "The grocery shop is the best shop around the city. This is being run under the store owner and our aim is to provide fresh and quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "894",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/Untitled-2.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/conversions/Untitled-2-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "893",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/Group-36321.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/conversions/Group-36321-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "61032",
+        "city": "Freeport",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "1986  Spinnaker Lane"
+      },
+      "settings": {
+        "contact": "018927525111",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          },
+          {
+            "url": "https://www.instagram.com/",
+            "icon": "InstagramIcon"
+          },
+          {
+            "url": "https://www.twitter.com/",
+            "icon": "TwitterIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 38.9032325,
+          "lng": -77.0211068,
+          "city": "Washington",
+          "state": "DC",
+          "country": "United States",
+          "formattedAddress": "New York Ave NW, Washington, DC, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:48:23.000000Z",
+      "updated_at": "2021-07-08T09:22:38.000000Z"
+    }
+  },
+  {
+    "id": 569,
+    "name": "Small asparagus 2lbs",
+    "slug": "small-asparagus-2lbs",
+    "description": "Asparagus are the young shoots form a lily plant. It is rich in dietary nutrients; such as vitamin B6, calcium and zinc and it is also a great source of dietary fibre. The product is more tinder compare to average asparagus sold on the market.",
+    "type_id": 7,
+    "price": 2.99,
+    "shop_id": 6,
+    "sale_price": null,
+    "language": "en",
+    "min_price": 2.99,
+    "max_price": 2.99,
+    "sku": "236541478963",
+    "quantity": 50,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "2lbs",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": 1017,
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1017/Edible-plant2.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1017/conversions/Edible-plant2-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-09-29T12:15:38.000000Z",
+    "updated_at": "2021-12-23T16:54:54.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 6,
+      "owner_id": 1,
+      "name": "Grocery Shop",
+      "slug": "grocery-shop",
+      "description": "The grocery shop is the best shop around the city. This is being run under the store owner and our aim is to provide fresh and quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "894",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/Untitled-2.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/conversions/Untitled-2-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "893",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/Group-36321.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/conversions/Group-36321-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "61032",
+        "city": "Freeport",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "1986  Spinnaker Lane"
+      },
+      "settings": {
+        "contact": "018927525111",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          },
+          {
+            "url": "https://www.instagram.com/",
+            "icon": "InstagramIcon"
+          },
+          {
+            "url": "https://www.twitter.com/",
+            "icon": "TwitterIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 38.9032325,
+          "lng": -77.0211068,
+          "city": "Washington",
+          "state": "DC",
+          "country": "United States",
+          "formattedAddress": "New York Ave NW, Washington, DC, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:48:23.000000Z",
+      "updated_at": "2021-07-08T09:22:38.000000Z"
+    }
+  },
+  {
+    "id": 400,
+    "name": "Absolute Plus Meat Dental Set",
+    "slug": "absolute-plus-meat-dental-set-1",
+    "description": "Oral hygiene is the practice of keeping one's mouth clean and free of disease and other problems (e.g. bad breath) by regular brushing of the teeth (dental hygiene) and cleaning between the teeth.",
+    "type_id": 1,
+    "price": 10,
+    "shop_id": 6,
+    "sale_price": 7.5,
+    "language": "en",
+    "min_price": 10,
+    "max_price": 10,
+    "sku": "2080",
+    "quantity": 50,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "1 pc(s)",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": "408",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/408/absolute_plus_Meat_Dental_Set_.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/408/conversions/absolute_plus_Meat_Dental_Set_-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-03-12T22:34:28.000000Z",
+    "updated_at": "2021-12-23T17:13:32.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 6,
+      "owner_id": 1,
+      "name": "Grocery Shop",
+      "slug": "grocery-shop",
+      "description": "The grocery shop is the best shop around the city. This is being run under the store owner and our aim is to provide fresh and quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "894",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/Untitled-2.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/conversions/Untitled-2-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "893",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/Group-36321.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/conversions/Group-36321-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "61032",
+        "city": "Freeport",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "1986  Spinnaker Lane"
+      },
+      "settings": {
+        "contact": "018927525111",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          },
+          {
+            "url": "https://www.instagram.com/",
+            "icon": "InstagramIcon"
+          },
+          {
+            "url": "https://www.twitter.com/",
+            "icon": "TwitterIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 38.9032325,
+          "lng": -77.0211068,
+          "city": "Washington",
+          "state": "DC",
+          "country": "United States",
+          "formattedAddress": "New York Ave NW, Washington, DC, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:48:23.000000Z",
+      "updated_at": "2021-07-08T09:22:38.000000Z"
+    }
+  },
+  {
+    "id": 313,
+    "name": "Arla Lacto Free Semi Skimmed Milk",
+    "slug": "arla-lacto-free-semi-skimmed-milk",
+    "description": "Milk is a nutrient-rich, white liquid food produced by the mammary glands of mammals. It is the primary source of nutrition for infant mammals (including humans who are breastfed) before they are able to digest other types of food.",
+    "type_id": 1,
+    "price": 5,
+    "shop_id": 6,
+    "sale_price": 4.59,
+    "language": "en",
+    "min_price": 5,
+    "max_price": 5,
+    "sku": "1915",
+    "quantity": 50,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "2lb",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": "317",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/317/milk_arla_lacto_free.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/317/conversions/milk_arla_lacto_free-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-03-12T18:34:12.000000Z",
+    "updated_at": "2021-12-23T17:23:33.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 6,
+      "owner_id": 1,
+      "name": "Grocery Shop",
+      "slug": "grocery-shop",
+      "description": "The grocery shop is the best shop around the city. This is being run under the store owner and our aim is to provide fresh and quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "894",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/Untitled-2.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/892/conversions/Untitled-2-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "893",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/Group-36321.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/891/conversions/Group-36321-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "61032",
+        "city": "Freeport",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "1986  Spinnaker Lane"
+      },
+      "settings": {
+        "contact": "018927525111",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          },
+          {
+            "url": "https://www.instagram.com/",
+            "icon": "InstagramIcon"
+          },
+          {
+            "url": "https://www.twitter.com/",
+            "icon": "TwitterIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 38.9032325,
+          "lng": -77.0211068,
+          "city": "Washington",
+          "state": "DC",
+          "country": "United States",
+          "formattedAddress": "New York Ave NW, Washington, DC, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:48:23.000000Z",
+      "updated_at": "2021-07-08T09:22:38.000000Z"
+    }
+  },
+  {
+    "id": 155,
+    "name": "Vero Moda Coco Wide Pant",
+    "slug": "vero-moda-coco-wide-pant",
+    "description": "Indigo blue cotton mid rise denim shorts from Levi's featuring a waistband with belt loops, a button and zip fly, an unfinished hem and a five pocket design.",
+    "type_id": 5,
+    "price": 45,
+    "shop_id": 2,
+    "sale_price": 36,
+    "language": "en",
+    "min_price": 45,
+    "max_price": 45,
+    "sku": "1280",
+    "quantity": 50,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "1 pc(s)",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": "156",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/156/VERO_MODA.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/156/conversions/VERO_MODA-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-03-10T08:29:26.000000Z",
+    "updated_at": "2021-12-23T17:51:03.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 0,
+    "total_reviews": 0,
+    "rating_count": [],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 2,
+      "owner_id": 1,
+      "name": "Clothing Shop",
+      "slug": "clothing-shop",
+      "description": "The clothing shop is the best shop around the city. This is being run under the store owner and our aim is to provide quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "886",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/884/Untitled-4.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/884/conversions/Untitled-4-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "896",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/894/fashion.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/894/conversions/fashion-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "62656",
+        "city": "Lincoln",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "4885  Spring Street"
+      },
+      "settings": {
+        "contact": "212901921221",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 40.1576691,
+          "lng": -89.38529779999999,
+          "city": "Lincoln",
+          "state": "IL",
+          "country": "United States",
+          "formattedAddress": "IL-121, Lincoln, IL, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:47:10.000000Z",
+      "updated_at": "2021-07-08T09:26:24.000000Z"
+    }
+  },
+  {
+    "id": 111,
+    "name": "Mango Self Striped A Line Dress",
+    "slug": "mango-self-striped-a-line-dress",
+    "description": "Off-White self-striped knitted midi A-line dress, has a scoop neck, sleeveless, straight hem",
+    "type_id": 5,
+    "price": null,
+    "shop_id": 2,
+    "sale_price": null,
+    "language": "en",
+    "min_price": 70,
+    "max_price": 81,
+    "sku": null,
+    "quantity": 1000,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "variable",
+    "unit": "1 pc(s)",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": "112",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/112/mango.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/112/conversions/mango-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-03-09T17:56:41.000000Z",
+    "updated_at": "2021-12-23T18:01:30.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 5,
+    "total_reviews": 1,
+    "rating_count": [
+      {
+        "rating": 5,
+        "total": 1,
+        "positive_feedbacks_count": 0,
+        "negative_feedbacks_count": 0,
+        "my_feedback": null,
+        "abusive_reports_count": 0
+      }
+    ],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 2,
+      "owner_id": 1,
+      "name": "Clothing Shop",
+      "slug": "clothing-shop",
+      "description": "The clothing shop is the best shop around the city. This is being run under the store owner and our aim is to provide quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "886",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/884/Untitled-4.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/884/conversions/Untitled-4-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "896",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/894/fashion.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/894/conversions/fashion-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "62656",
+        "city": "Lincoln",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "4885  Spring Street"
+      },
+      "settings": {
+        "contact": "212901921221",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 40.1576691,
+          "lng": -89.38529779999999,
+          "city": "Lincoln",
+          "state": "IL",
+          "country": "United States",
+          "formattedAddress": "IL-121, Lincoln, IL, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:47:10.000000Z",
+      "updated_at": "2021-07-08T09:26:24.000000Z"
+    }
+  },
+  {
+    "id": 110,
+    "name": "Magnetic Designs Women Printed Fit And Flare Dress",
+    "slug": "magnetic-designs-women-printed-fit-and-flare-dress",
+    "description": "Mauve printed knitted fit and flare dress, has a round neck, three-quarter sleeves, concealed zip closure,, flared hem",
+    "type_id": 5,
+    "price": null,
+    "shop_id": 2,
+    "sale_price": null,
+    "language": "en",
+    "min_price": 35,
+    "max_price": 35,
+    "sku": null,
+    "quantity": 1000,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "variable",
+    "unit": "1 pc(s)",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": "111",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/111/magnetic.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/111/conversions/magnetic-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [
+      {
+        "id": "668",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/667/Printed-Dress-2.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/667/conversions/Printed-Dress-2-thumbnail.jpg"
+      },
+      {
+        "id": "669",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/668/Printed-Dress.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/668/conversions/Printed-Dress-thumbnail.jpg"
+      },
+      {
+        "id": "767",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/766/magnetic.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/766/conversions/magnetic-thumbnail.jpg"
+      }
+    ],
+    "deleted_at": null,
+    "created_at": "2021-03-09T17:55:02.000000Z",
+    "updated_at": "2021-12-23T18:01:35.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 1,
+    "total_reviews": 1,
+    "rating_count": [
+      {
+        "rating": 1,
+        "total": 1,
+        "positive_feedbacks_count": 0,
+        "negative_feedbacks_count": 0,
+        "my_feedback": null,
+        "abusive_reports_count": 0
+      }
+    ],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 2,
+      "owner_id": 1,
+      "name": "Clothing Shop",
+      "slug": "clothing-shop",
+      "description": "The clothing shop is the best shop around the city. This is being run under the store owner and our aim is to provide quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "886",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/884/Untitled-4.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/884/conversions/Untitled-4-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "896",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/894/fashion.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/894/conversions/fashion-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "62656",
+        "city": "Lincoln",
+        "state": "Illinois",
+        "country": "USA",
+        "street_address": "4885  Spring Street"
+      },
+      "settings": {
+        "contact": "212901921221",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": 40.1576691,
+          "lng": -89.38529779999999,
+          "city": "Lincoln",
+          "state": "IL",
+          "country": "United States",
+          "formattedAddress": "IL-121, Lincoln, IL, USA"
+        }
+      },
+      "created_at": "2021-06-27T03:47:10.000000Z",
+      "updated_at": "2021-07-08T09:26:24.000000Z"
+    }
+  },
+  {
+    "id": 104,
+    "name": "Givenchy Purse",
+    "slug": "givenchy-purse",
+    "description": "Established in 1952, Givenchy's stance on contemporary elegance is perfectly captured through the brand’s premium accessory collections. Crafted from calf leather, this grey GV3 croc-effect shoulder bag from Givenchy features a chain top handle with logo charm, a detachable shoulder strap, a front flap closure, a metal logo plaque to the front, gold-tone hardware and suede panels.",
+    "type_id": 4,
+    "price": 75,
+    "shop_id": 3,
+    "sale_price": 60,
+    "language": "en",
+    "min_price": 75,
+    "max_price": 75,
+    "sku": "2002",
+    "quantity": 50,
+    "in_stock": 1,
+    "is_taxable": 0,
+    "shipping_class_id": null,
+    "status": "publish",
+    "product_type": "simple",
+    "unit": "1 pc(s)",
+    "height": null,
+    "width": null,
+    "length": null,
+    "image": {
+      "id": "105",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/105/givency_purse.jpg",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/105/conversions/givency_purse-thumbnail.jpg"
+    },
+    "video": null,
+    "gallery": [],
+    "deleted_at": null,
+    "created_at": "2021-03-09T17:18:11.000000Z",
+    "updated_at": "2021-12-23T18:01:53.000000Z",
+    "author_id": null,
+    "manufacturer_id": null,
+    "is_digital": 0,
+    "is_external": 0,
+    "external_product_url": null,
+    "external_product_button_text": null,
+    "ratings": 5,
+    "total_reviews": 1,
+    "rating_count": [
+      {
+        "rating": 5,
+        "total": 1,
+        "positive_feedbacks_count": 0,
+        "negative_feedbacks_count": 0,
+        "my_feedback": null,
+        "abusive_reports_count": 0
+      }
+    ],
+    "my_review": null,
+    "in_wishlist": true,
+    "blocked_dates": [],
+    "translated_languages": ["en"],
+    "shop": {
+      "id": 3,
+      "owner_id": 1,
+      "name": "Bags Shop",
+      "slug": "bags-shop",
+      "description": "The Bag shop is the best shop around the city. This is being run under the store owner and our aim is to provide quality product and hassle free customer service.",
+      "cover_image": {
+        "id": "889",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/887/Untitled-1-%281%29.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/887/conversions/Untitled-1-%281%29-thumbnail.jpg"
+      },
+      "logo": {
+        "id": "888",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/886/Backpack.png",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/886/conversions/Backpack-thumbnail.jpg"
+      },
+      "is_active": 1,
+      "address": {
+        "zip": "35203",
+        "city": "Michigan",
+        "state": "Alabama",
+        "country": "USA",
+        "street_address": "1740  Bedford Street"
+      },
+      "settings": {
+        "contact": "01920192102",
+        "socials": [
+          {
+            "url": "https://www.facebook.com/",
+            "icon": "FacebookIcon"
+          },
+          {
+            "url": "https://www.instagram.com/",
+            "icon": "InstagramIcon"
+          }
+        ],
+        "website": "https://redq.io/",
+        "location": {
+          "lat": -37.1374024,
+          "lng": 174.9685924,
+          "zip": "2579",
+          "city": "Ramarama",
+          "state": "Auckland",
+          "country": "New Zealand",
+          "formattedAddress": "Waharau Lane, Ramarama 2579, New Zealand"
+        }
+      },
+      "created_at": "2021-06-27T03:47:23.000000Z",
+      "updated_at": "2021-07-08T09:25:34.000000Z"
+    }
+  }
+]

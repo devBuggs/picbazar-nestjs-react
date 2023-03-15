@@ -1,0 +1,134 @@
+query Settings($language: String) {
+  settings(language: $language) {
+    id
+    language
+    options {
+      siteTitle
+      siteSubtitle
+      currency
+      minimumOrderAmount
+      currencyToWalletRatio
+      signupPoints
+      maximumQuestionLimit
+      useOtp
+      freeShipping
+      freeShippingAmount
+      useCashOnDelivery
+      paymentGateway
+      deliveryTime {
+        title
+        description
+      }
+      logo {
+        id
+        thumbnail
+        original
+      }
+      taxClass
+      shippingClass
+      seo {
+        metaTitle
+        metaDescription
+        ogTitle
+        ogDescription
+        ogImage {
+          id
+          thumbnail
+          original
+        }
+        twitterHandle
+        twitterCardType
+        metaTags
+        canonicalUrl
+      }
+      google {
+        isEnable
+        tagManagerId
+      }
+      facebook {
+        isEnable
+        appId
+        pageId
+      }
+      contactDetails {
+        socials {
+          icon
+          url
+        }
+        website
+        contact
+        location {
+          lat
+          lng
+          formattedAddress
+          city
+          state
+          country
+          zip
+        }
+      }
+    }
+  }
+  taxClasses {
+    id
+    name
+  }
+  shippingClasses {
+    id
+    name
+  }
+}
+
+mutation UpdateSettings($input: SettingsInput!) {
+  updateSettings(input: $input) {
+    id
+    language
+    options {
+      siteTitle
+      siteSubtitle
+      useOtp
+      freeShipping
+      freeShippingAmount
+      useCashOnDelivery
+      paymentGateway
+      currency
+      minimumOrderAmount
+      maximumQuestionLimit
+      deliveryTime {
+        title
+        description
+      }
+      logo {
+        id
+        thumbnail
+        original
+      }
+      taxClass
+      shippingClass
+      seo {
+        metaTitle
+        metaDescription
+        ogTitle
+        ogDescription
+        ogImage {
+          id
+          thumbnail
+          original
+        }
+        twitterHandle
+        twitterCardType
+        metaTags
+        canonicalUrl
+      }
+      google {
+        isEnable
+        tagManagerId
+      }
+      facebook {
+        isEnable
+        appId
+        pageId
+      }
+    }
+  }
+}

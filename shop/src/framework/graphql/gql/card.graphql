@@ -1,0 +1,23 @@
+# import CardParts from '../fragments/card.fragment.graphql'
+
+query Cards{
+    cards{
+        ...CardParts
+    }
+}
+
+mutation AddNewCard($input: AddNewCardInput!){
+    addNewCard(input: $input){
+        ...CardParts
+    }
+}
+
+mutation SetDefaultPaymentMethod($method_id: ID!){
+    setDefaultPaymentMethod(method_id: $method_id){
+        ...CardParts
+    }
+}
+
+mutation DeleteCard($id: ID!){
+    deleteCard(id: $id)
+}

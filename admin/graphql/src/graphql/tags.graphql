@@ -1,0 +1,69 @@
+# import PaginatorParts from './paginator.fragment.graphql'
+
+fragment TagParts on Tag {
+  id
+  name
+  language
+  translated_languages
+  slug
+  details
+  image {
+    id
+    thumbnail
+    original
+  }
+  icon
+  type {
+    id
+    name
+    slug
+  }
+}
+query Tags(
+  $orderBy: [QueryTagsOrderByOrderByClause!]
+  $language: String
+  $name: String
+  $text: String
+  $hasType: QueryTagsHasTypeWhereHasConditions
+  $first: Int = 15
+  $page: Int
+) {
+  tags(
+    text: $text
+    language: $language
+    orderBy: $orderBy
+    name: $name
+    hasType: $hasType
+    first: $first
+    page: $page
+  ) {
+    data {
+      ...TagParts
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query Tag($id: ID, $slug: String, $language: String) {
+  tag(id: $id, slug: $slug, language: $language) {
+    ...TagParts
+  }
+}
+
+mutation CreateTag($input: CreateTagInput!) {
+  createTag(input: $input) {
+    id
+  }
+}
+mutation UpdateTag($input: UpdateTagInput!) {
+  updateTag(input: $input) {
+    ...TagParts
+  }
+}
+mutation DeleteTag($id: ID!) {
+  deleteTag(id: $id) {
+    ...TagParts
+  }
+}

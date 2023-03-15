@@ -1,0 +1,285 @@
+# import ProductParts from '../fragments/product.fragment.graphql'
+# import AuthorParts from '../fragments/author.fragment.graphql'
+# import PaginatorParts from '../fragments/paginator.fragment.graphql'
+# import AbusiveReportParts from '../fragments/abusive-report.fragment.graphql'
+# import PaymentIntentParts from '../fragments/payment_intent.fragment.graphql'
+
+fragment QuestionParts on Question {
+  id
+  question
+  answer
+  created_at
+  user {
+    id
+    name
+    email
+  }
+  positive_feedbacks_count
+  negative_feedbacks_count
+  my_feedback {
+    id
+    positive
+    negative
+  }
+}
+query Products(
+  $search: String
+  $date_range: String
+  $orderBy: String
+  $sortedBy: String
+  $language: String
+  $searchJoin: String = "AND"
+  $first: Int = 15
+  $page: Int
+) {
+  products(
+    search: $search
+    date_range: $date_range
+    sortedBy: $sortedBy
+    orderBy: $orderBy
+    language: $language
+    searchJoin: $searchJoin
+    first: $first
+    page: $page
+  ) {
+    data {
+      ...ProductParts
+      author {
+        name
+        slug
+        id
+      }
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query Product($id: ID, $slug: String, $language: String) {
+  product(id: $id, slug: $slug, language: $language) {
+    ...ProductParts
+    author {
+      ...AuthorParts
+    }
+    manufacturer {
+      id
+      name
+      slug
+    }
+    shop_id
+    shop {
+      id
+      name
+      slug
+    }
+    description
+    categories {
+      id
+      name
+      slug
+      children {
+        id
+        name
+        slug
+      }
+    }
+    gallery {
+      id
+      thumbnail
+      original
+    }
+    variations {
+      id
+      value
+      meta
+      attribute {
+        id
+        name
+        slug
+      }
+    }
+    variation_options {
+      id
+      title
+      price
+      sale_price
+      quantity
+      is_disable
+      image {
+        id
+        thumbnail
+        original
+      }
+      options {
+        name
+        value
+      }
+    }
+    author {
+      id
+      name
+      slug
+    }
+    related_products(limit: 8) {
+      ...ProductParts
+    }
+  }
+}
+query PopularProducts($limit: Int, $type_slug: String, $range: Int) {
+  popularProducts(limit: $limit, type_slug: $type_slug, range: $range) {
+    ...ProductParts
+    author {
+      name
+      slug
+      id
+    }
+  }
+}
+
+query DownloadableProducts($first: Int = 15, $page: Int) {
+  downloads(first: $first, page: $page) {
+    data {
+      file {
+        fileable {
+          __typename
+          ... on Product {
+            name
+            slug
+            image {
+              id
+              thumbnail
+              original
+            }
+            shop {
+              name
+              slug
+            }
+          }
+          ... on Variation {
+            title
+            product {
+              name
+              image {
+                id
+                thumbnail
+                original
+              }
+            }
+            image {
+              id
+            }
+          }
+        }
+      }
+      id
+      purchase_key
+      digital_file_id
+      tracking_number
+      order {
+        payment_status
+        order_status
+        payment_intent {
+          ...PaymentIntentParts
+        }
+        payment_gateway
+      }
+      created_at
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query Questions(
+  $product_id: ID
+  $shop_id: ID
+  $question: String
+  $orderBy: [QueryQuestionsOrderByOrderByClause!]
+  $first: Int = 15
+  $page: Int
+) {
+  questions(
+    product_id: $product_id
+    shop_id: $shop_id
+    question: $question
+    orderBy: $orderBy
+    first: $first
+    page: $page
+  ) {
+    data {
+      ...QuestionParts
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query MyQuestions(
+  $orderBy: [QueryMyQuestionsOrderByOrderByClause!]
+  $first: Int = 15
+  $page: Int
+) {
+  myQuestions(
+    orderBy: $orderBy
+    first: $first
+    page: $page
+  ) {
+    data {
+      ...QuestionParts
+      product {
+        ...ProductParts
+      }
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query MyReports(
+  $orderBy: [QueryMyReportsOrderByOrderByClause!]
+  $first: Int = 15
+  $page: Int
+) {
+  myReports(
+    orderBy: $orderBy
+    first: $first
+    page: $page
+  ) {
+    data {
+      ...AbusiveReportParts
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+
+mutation GenerateDownloadableUrl($input: GenerateDownloadableUrlInput!) {
+  generateDownloadableUrl(input: $input)
+}
+
+mutation CreateQuestion($input: CreateQuestionInput!) {
+  createQuestion(input: $input) {
+    ...QuestionParts
+  }
+}
+
+mutation CreateFeedback($input: CreateFeedbackInput!) {
+  createFeedback(input: $input) {
+    id
+    positive
+    negative
+  }
+}
+
+mutation CreateAbuseReport($input: CreateAbusiveReportInput!) {
+  createAbusiveReport(input: $input) {
+    model_id
+    message
+  }
+}

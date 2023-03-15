@@ -1,0 +1,59 @@
+# import PaginatorParts from '../fragments/paginator.fragment.graphql'
+fragment ReviewParts on Review {
+  id
+  comment
+  rating
+  photos {
+    id
+    thumbnail
+    original
+  }
+  user {
+    id
+    name
+  }
+  positive_feedbacks_count
+  negative_feedbacks_count
+  my_feedback {
+    id
+    positive
+    negative
+  }
+}
+
+query Reviews(
+  $product_id: ID
+  $shop_id: ID
+  $rating: Float
+  $orderBy: [QueryReviewsOrderByOrderByClause!]
+  $first: Int = 15
+  $page: Int
+) {
+  reviews(
+    product_id: $product_id
+    shop_id: $shop_id
+    rating: $rating
+    first: $first
+    page: $page
+    orderBy: $orderBy
+  ) {
+    data {
+      ...ReviewParts
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+mutation CreateReview($input: CreateReviewInput!) {
+  createReview(input: $input) {
+    ...ReviewParts
+  }
+}
+
+mutation UpdateReview($id: ID!, $input: UpdateReviewInput!) {
+  updateReview(id: $id, input: $input) {
+    ...ReviewParts
+  }
+}

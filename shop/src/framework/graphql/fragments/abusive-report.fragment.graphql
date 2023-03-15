@@ -1,0 +1,15 @@
+
+fragment AbusiveReportParts on AbusiveReport {
+  id
+  user_id
+  user {
+    id
+    name
+    email
+  }
+  model_id
+  model_type
+  message
+  created_at
+  updated_at
+}

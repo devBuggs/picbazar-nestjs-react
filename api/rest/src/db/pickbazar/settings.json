@@ -1,0 +1,61 @@
+{
+  "id": 1,
+  "options": {
+    "siteTitle": "Pickbazar",
+    "siteSubtitle": "Your next ecommerce",
+    "minimumOrderAmount": 0,
+    "currencyToWalletRatio": 3,
+    "signupPoints": 100,
+    "maximumQuestionLimit": 5,
+    "seo": {
+      "metaTitle": null,
+      "metaDescription": null,
+      "metaTags": null,
+      "canonicalUrl": null,
+      "ogTitle": null,
+      "ogDescription": null,
+      "twitterHandle": null,
+      "twitterCardType": null,
+      "ogImage": null
+    },
+    "deliveryTime": [
+      { "title": "Express Delivery", "description": "90 min express delivery" },
+      { "title": "Morning", "description": "8.00 AM - 11.00 AM" },
+      { "title": "Noon", "description": "11.00 AM - 2.00 PM" },
+      { "title": "Afternoon", "description": "2.00 PM - 5.00 PM" },
+      { "title": "Evening", "description": "5.00 PM - 8.00 PM" }
+    ],
+    "contactDetails": {
+      "contact": "+129290122122",
+      "website": "https://redq.io",
+      "socials": [
+        { "icon": "FacebookIcon", "url": "https://www.facebook.com/" },
+        { "icon": "TwitterIcon", "url": "https://twitter.com/home" },
+        { "icon": "InstagramIcon", "url": null }
+      ],
+      "location": {
+        "lat": 42.9585979,
+        "lng": -76.90872019999999,
+        "zip": null,
+        "city": null,
+        "state": "NY",
+        "country": "United States",
+        "formattedAddress": "NY State Thruway, New York, USA"
+      }
+    },
+    "logo": {
+      "id": "862",
+      "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/860/PickBazar.png",
+      "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/860/conversions/PickBazar-thumbnail.jpg"
+    },
+    "currency": "USD",
+    "useOtp": false,
+    "taxClass": 1,
+    "shippingClass": 1,
+    "useCashOnDelivery": true,
+    "paymentGateway": "stripe"
+  },
+  "language": "en",
+  "created_at": "2021-03-24T15:30:18.000000Z",
+  "updated_at": "2022-12-14T18:13:56.000000Z"
+}

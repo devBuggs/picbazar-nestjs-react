@@ -1,0 +1,85 @@
+# import PaginatorParts from '../fragments/paginator.fragment.graphql'
+
+query Wishlists($first: Int = 15, $page: Int) {
+  wishlists(first: $first, page: $page) {
+    data {
+      id
+      name
+      slug
+      type {
+        id
+        name
+        slug
+        settings {
+          productCard
+        }
+      }
+      product_type
+      price
+      sale_price
+      min_price
+      max_price
+      quantity
+      unit
+      sku
+      is_digital
+      is_external
+      ratings
+      shop {
+        name
+        slug
+      }
+      image {
+        id
+        thumbnail
+        original
+      }
+      tags {
+        id
+        name
+        slug
+      }
+      variations {
+        id
+        value
+        meta
+        attribute {
+          id
+          name
+          slug
+        }
+      }
+      variation_options {
+        id
+        title
+        price
+        sale_price
+        quantity
+        is_disable
+        image {
+          id
+          thumbnail
+          original
+        }
+        options {
+          name
+          value
+        }
+      }
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query InWishlist($id: ID!) {
+  in_wishlist(product_id: $id)
+}
+mutation ToggleWishlist($input: CreateWishlistInput!) {
+  toggleWishlist(input: $input)
+}
+
+mutation RemoveFromWishlist($slug: String!) {
+  deleteWishlist(slug: $slug)
+}

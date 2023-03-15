@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "name": "Order Received",
+    "slug": "order-received",
+    "serial": 1,
+    "color": "#23b848",
+    "created_at": "2021-03-08T21:33:52.000000Z",
+    "updated_at": "2021-03-08T21:34:04.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Order Processing",
+    "slug": "order-processing",
+    "serial": 2,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:01:42.000000Z",
+    "updated_at": "2021-03-13T15:01:42.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ready To Dispatch",
+    "slug": "ready-to-dispatch",
+    "serial": 3,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:02:15.000000Z",
+    "updated_at": "2021-03-13T15:02:15.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Order Dispatched",
+    "slug": "order-dispatched",
+    "serial": 4,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:02:49.000000Z",
+    "updated_at": "2021-03-13T15:02:49.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "At Local Facility",
+    "slug": "at-local-facility",
+    "serial": 5,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:03:15.000000Z",
+    "updated_at": "2021-03-13T15:03:15.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Out For Delivery",
+    "slug": "out-for-delivery",
+    "serial": 6,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:04:13.000000Z",
+    "updated_at": "2021-03-13T15:04:13.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Failed to collect payment",
+    "slug": "failed-to-collect-payment",
+    "serial": 8,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:04:57.000000Z",
+    "updated_at": "2021-03-13T15:04:57.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Failed to contact Consignee",
+    "slug": "failed-to-contact-consignee",
+    "serial": 9,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:05:18.000000Z",
+    "updated_at": "2021-03-13T15:05:18.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Shipment Refused by Consignee",
+    "slug": "shipment-refused-by-consignee",
+    "serial": 10,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:05:35.000000Z",
+    "updated_at": "2021-03-13T15:05:35.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Delivered",
+    "slug": "delivered",
+    "serial": 11,
+    "color": "#d87b64",
+    "created_at": "2021-03-13T15:04:26.000000Z",
+    "updated_at": "2021-03-13T15:09:03.000000Z",
+    "language": "en",
+    "translated_languages": [
+      "en"
+    ]
+  }
+]

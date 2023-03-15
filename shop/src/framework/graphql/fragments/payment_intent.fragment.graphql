@@ -1,0 +1,14 @@
+fragment PaymentIntentParts on PaymentIntent {
+    id
+    order_id
+    payment_gateway
+    tracking_number
+    payment_intent_info {
+        client_secret
+        is_redirect
+        payment_id
+        redirect_url
+        amount
+        currency
+    }
+}

@@ -1,0 +1,12 @@
+fragment CardParts on Card {
+    id
+    method_key
+    payment_gateway_id
+    default_card
+    owner_name
+    network
+    type
+    last4
+    expires
+    origin
+}

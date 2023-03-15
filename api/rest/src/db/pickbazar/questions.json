@@ -1,0 +1,1386 @@
+[
+  {
+    "id": 68,
+    "user_id": 2,
+    "shop_id": 5,
+    "product_id": 470,
+    "question": "Is it sweet or sour?",
+    "answer": "its sweet as it contains suger.",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:19:46.000000Z",
+    "updated_at": "2022-03-18T10:20:42.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 470,
+      "name": "Sun Tropics Organic Mango Nectar,250ml",
+      "slug": "sun-tropics-organic-mango-nectar-250ml",
+      "description": "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice",
+      "type_id": 2,
+      "price": 2.25,
+      "shop_id": 5,
+      "sale_price": null,
+      "language": "en",
+      "min_price": 2.25,
+      "max_price": 2.25,
+      "sku": "3003",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "493",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/492/Juice-1_lx8xnf.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/492/conversions/Juice-1_lx8xnf-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-14T09:16:18.000000Z",
+      "updated_at": "2021-12-23T17:06:45.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 0,
+      "total_reviews": 0,
+      "rating_count": [],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 67,
+    "user_id": 2,
+    "shop_id": 5,
+    "product_id": 468,
+    "question": "Does it have preservatives?",
+    "answer": "No, this one does not have any preservatives",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:19:24.000000Z",
+    "updated_at": "2022-03-18T10:21:00.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 468,
+      "name": "Wonderful Pomegranate Juice, 300 ml",
+      "slug": "wonderful-pomegranate-juice-300-ml",
+      "description": "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice",
+      "type_id": 2,
+      "price": 3,
+      "shop_id": 5,
+      "sale_price": 2.4,
+      "language": "en",
+      "min_price": 3,
+      "max_price": 3,
+      "sku": "3001",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "491",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/490/Juice5_bz8od4.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/490/conversions/Juice5_bz8od4-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "807",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/805/Juice5_bz8od4.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/805/conversions/Juice5_bz8od4-thumbnail.jpg"
+        },
+        {
+          "id": "808",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/806/Juice5_bz8od4.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/806/conversions/Juice5_bz8od4-thumbnail.jpg"
+        },
+        {
+          "id": "809",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/807/Juice5_bz8od4.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/807/conversions/Juice5_bz8od4-thumbnail.jpg"
+        },
+        {
+          "id": "810",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/808/Juice5_bz8od4.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/808/conversions/Juice5_bz8od4-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-14T09:14:15.000000Z",
+      "updated_at": "2021-12-23T17:06:52.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 66,
+    "user_id": 2,
+    "shop_id": 5,
+    "product_id": 467,
+    "question": "How many calories does it have?",
+    "answer": "its low on calories 30cal",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:18:47.000000Z",
+    "updated_at": "2022-03-18T10:21:15.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 467,
+      "name": "Ritai Organic Orange Juice 500 ml",
+      "slug": "ritai-organic-orange-juice-500-ml",
+      "description": "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice",
+      "type_id": 2,
+      "price": 1.8,
+      "shop_id": 5,
+      "sale_price": null,
+      "language": "en",
+      "min_price": 1.8,
+      "max_price": 1.8,
+      "sku": "3000",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "490",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/489/Juice-5_eqrtuu.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/489/conversions/Juice-5_eqrtuu-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "605",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/604/Organic-orange-juice-1.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/604/conversions/Organic-orange-juice-1-thumbnail.jpg"
+        },
+        {
+          "id": "606",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/605/Organic-orange-juice.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/605/conversions/Organic-orange-juice-thumbnail.jpg"
+        },
+        {
+          "id": "795",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/793/Juice-5_eqrtuu.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/793/conversions/Juice-5_eqrtuu-thumbnail.jpg"
+        },
+        {
+          "id": "796",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/794/Juice-1_lx8xnf.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/794/conversions/Juice-1_lx8xnf-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-14T09:13:11.000000Z",
+      "updated_at": "2021-12-23T17:06:55.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 4,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 4,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 65,
+    "user_id": 2,
+    "shop_id": 4,
+    "product_id": 25,
+    "question": "Is it original?",
+    "answer": "yes its original",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:18:21.000000Z",
+    "updated_at": "2022-03-18T10:23:36.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 25,
+      "name": "Clarins Everlasting Compact Foundation",
+      "slug": "clarins-everlasting-compact-foundation",
+      "description": "A 15-hour matte finish your skin will feel good about! Clarins' long-wearing compact foundation evens out skin tone and minimizes the look of imperfections in seconds, delivering a shine-free, matte finish and hours of comfortable wear. Ultra-fine texture resists heat, humidity and perspiration for flawless coverage that lasts throughout the day.",
+      "type_id": 3,
+      "price": 54,
+      "shop_id": 4,
+      "sale_price": null,
+      "language": "en",
+      "min_price": 54,
+      "max_price": 54,
+      "sku": "1005",
+      "quantity": 60,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "26",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/26/Clarins.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/26/conversions/Clarins-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "656",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/655/Bourjois-Little-Round-Pot-Blusher-1.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/655/conversions/Bourjois-Little-Round-Pot-Blusher-1-thumbnail.jpg"
+        },
+        {
+          "id": "657",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/656/Bourjois-Little-Round-Pot-Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/656/conversions/Bourjois-Little-Round-Pot-Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "660",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/659/Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/659/conversions/Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "764",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/763/Clarins.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/763/conversions/Clarins-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-09T06:31:30.000000Z",
+      "updated_at": "2021-12-23T18:14:14.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 1,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 1,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 64,
+    "user_id": 2,
+    "shop_id": 4,
+    "product_id": 23,
+    "question": "Do you have the big ones as well?",
+    "answer": "Unfortunately, this is the only ones we have.",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:17:59.000000Z",
+    "updated_at": "2022-03-18T10:23:54.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 23,
+      "name": "Smashbox The Cali Contour Palette",
+      "slug": "smashbox-the-cali-contour-palette",
+      "description": "An easy-to-use, six-well contour kit with pigment-packed, blendable highlighter, bronzer, and blush powders. Use these versatile shades to create an effortlessly lifted neutral look or a warm, just-cruised-down-the-coast glow. It features three matte and two pearlescent powders to shape, bronze, and highlight. It also includes one matte blush to add a youthful flush of subtle color to any look. It is formulated Without: - Parabens- Phthalates This laid-back makeup palette makes it easy to add warmth and dimension to your look. Customize your signature Cali glow using six neutrals, including two of Smashbox's bestselling contour shades. This product is cruelty-free and formulated without parabens, phthalates, fragrance.",
+      "type_id": 3,
+      "price": 42,
+      "shop_id": 4,
+      "sale_price": 38.59,
+      "language": "en",
+      "min_price": 42,
+      "max_price": 42,
+      "sku": "1003",
+      "quantity": 30,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "24",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/24/Smashbox.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/24/conversions/Smashbox-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "644",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/643/Blusher-1.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/643/conversions/Blusher-1-thumbnail.jpg"
+        },
+        {
+          "id": "645",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/644/Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/644/conversions/Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "646",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/645/Blusher.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/645/conversions/Blusher-thumbnail.jpg"
+        },
+        {
+          "id": "759",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/758/Smashbox.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/758/conversions/Smashbox-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-09T06:26:00.000000Z",
+      "updated_at": "2021-12-23T18:14:20.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 1,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 1,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 63,
+    "user_id": 2,
+    "shop_id": 4,
+    "product_id": 22,
+    "question": "Is it possible to get some more discount?",
+    "answer": "Unfortunaltey we do not have any further discounts.",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:16:48.000000Z",
+    "updated_at": "2022-03-18T10:24:12.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 22,
+      "name": "Cyo Crush On Blush Powder Blush",
+      "slug": "cyo-crush-on-blush-powder-blush",
+      "description": "Bourjois Little Round Pot Blusher has been keeping women beautiful for generations. Made in an exclusive baked technology process, its incredibly transparent & light texture formula is easy to apply and blends impeccably.",
+      "type_id": 3,
+      "price": 11,
+      "shop_id": 4,
+      "sale_price": 8,
+      "language": "en",
+      "min_price": 11,
+      "max_price": 11,
+      "sku": "1002",
+      "quantity": 60,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "23",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/23/CYO.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/23/conversions/CYO-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "640",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/639/Bourjois-Little-Round-Pot-Blusher-1.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/639/conversions/Bourjois-Little-Round-Pot-Blusher-1-thumbnail.jpg"
+        },
+        {
+          "id": "641",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/640/Bourjois-Little-Round-Pot-Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/640/conversions/Bourjois-Little-Round-Pot-Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "643",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/642/Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/642/conversions/Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "758",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/757/CYO.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/757/conversions/CYO-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-09T06:23:13.000000Z",
+      "updated_at": "2021-12-23T18:14:22.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 4,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 4,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 62,
+    "user_id": 2,
+    "shop_id": 4,
+    "product_id": 21,
+    "question": "What other shades you have?",
+    "answer": "We have 26 other shades please check our profile for full shades.",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:16:25.000000Z",
+    "updated_at": "2022-03-18T10:28:53.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 21,
+      "name": "Bourjois Little Round Pot Blusher",
+      "slug": "bourjois-little-round-pot-blusher",
+      "description": "Bourjois Little Round Pot Blusher has been keeping women beautiful for generations. Made in an exclusive baked technology process, its incredibly transparent & light texture formula is easy to apply and blends impeccably.",
+      "type_id": 3,
+      "price": 9,
+      "shop_id": 4,
+      "sale_price": 8,
+      "language": "en",
+      "min_price": 9,
+      "max_price": 9,
+      "sku": "1001",
+      "quantity": 49,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "22",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/22/Bourjois.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/22/conversions/Bourjois-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "637",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/636/Bourjois-Little-Round-Pot-Blusher-1.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/636/conversions/Bourjois-Little-Round-Pot-Blusher-1-thumbnail.jpg"
+        },
+        {
+          "id": "638",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/637/Bourjois-Little-Round-Pot-Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/637/conversions/Bourjois-Little-Round-Pot-Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "639",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/638/Bourjois-Little-Round-Pot-Blusher.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/638/conversions/Bourjois-Little-Round-Pot-Blusher-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-09T06:00:30.000000Z",
+      "updated_at": "2021-12-23T18:14:25.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 61,
+    "user_id": 2,
+    "shop_id": 4,
+    "product_id": 21,
+    "question": "Does it come with brush?",
+    "answer": "Yes",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:16:11.000000Z",
+    "updated_at": "2022-03-18T10:31:58.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 21,
+      "name": "Bourjois Little Round Pot Blusher",
+      "slug": "bourjois-little-round-pot-blusher",
+      "description": "Bourjois Little Round Pot Blusher has been keeping women beautiful for generations. Made in an exclusive baked technology process, its incredibly transparent & light texture formula is easy to apply and blends impeccably.",
+      "type_id": 3,
+      "price": 9,
+      "shop_id": 4,
+      "sale_price": 8,
+      "language": "en",
+      "min_price": 9,
+      "max_price": 9,
+      "sku": "1001",
+      "quantity": 49,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "22",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/22/Bourjois.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/22/conversions/Bourjois-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "637",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/636/Bourjois-Little-Round-Pot-Blusher-1.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/636/conversions/Bourjois-Little-Round-Pot-Blusher-1-thumbnail.jpg"
+        },
+        {
+          "id": "638",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/637/Bourjois-Little-Round-Pot-Blusher-2.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/637/conversions/Bourjois-Little-Round-Pot-Blusher-2-thumbnail.jpg"
+        },
+        {
+          "id": "639",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/638/Bourjois-Little-Round-Pot-Blusher.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/638/conversions/Bourjois-Little-Round-Pot-Blusher-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-09T06:00:30.000000Z",
+      "updated_at": "2021-12-23T18:14:25.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 60,
+    "user_id": 2,
+    "shop_id": 3,
+    "product_id": 105,
+    "question": "Is there any variation available?",
+    "answer": "Unfortunately no",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:14:40.000000Z",
+    "updated_at": "2022-03-18T10:32:07.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 105,
+      "name": "Givenchy Mini Purse",
+      "slug": "givenchy-mini-purse",
+      "description": "Luxury Italian fashion house Gucci is renowned for its instantly recognisable bags and accessories, infusing its unique sense of quality and exquisite design into each piece. This pink logo print leather backpack from Gucci features top handles, a drawstring fastening, a pebbled leather texture, a removable zipped pouch and a vintage Gucci logo.",
+      "type_id": 4,
+      "price": 80,
+      "shop_id": 3,
+      "sale_price": 70,
+      "language": "en",
+      "min_price": 80,
+      "max_price": 80,
+      "sku": "2003",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "106",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/106/gucci_mini_purse.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/106/conversions/gucci_mini_purse-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-09T17:19:22.000000Z",
+      "updated_at": "2021-12-23T18:01:50.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 59,
+    "user_id": 2,
+    "shop_id": 3,
+    "product_id": 107,
+    "question": "Does it have any color variation?",
+    "answer": "Yes, its also available in black and brown",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:14:11.000000Z",
+    "updated_at": "2022-03-18T10:39:25.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 107,
+      "name": "Armani Silver Purse",
+      "slug": "armani-silver-purse",
+      "description": "The name Giorgio Armani has become synonymous with clean lines and Italian style. One of the most recognisable fashion houses in the world, the label has dressed some of the world’s most beautiful women.",
+      "type_id": 4,
+      "price": 120,
+      "shop_id": 3,
+      "sale_price": null,
+      "language": "en",
+      "min_price": 120,
+      "max_price": 120,
+      "sku": "2006",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "108",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/108/91PirQjxGjL._UL1500_.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/108/conversions/91PirQjxGjL._UL1500_-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-09T17:40:49.000000Z",
+      "updated_at": "2021-12-23T18:01:44.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 58,
+    "user_id": 2,
+    "shop_id": 3,
+    "product_id": 104,
+    "question": "Does it have any color variation?",
+    "answer": "Unfortunatley no",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:13:52.000000Z",
+    "updated_at": "2022-03-18T10:39:33.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 104,
+      "name": "Givenchy Purse",
+      "slug": "givenchy-purse",
+      "description": "Established in 1952, Givenchy's stance on contemporary elegance is perfectly captured through the brand’s premium accessory collections. Crafted from calf leather, this grey GV3 croc-effect shoulder bag from Givenchy features a chain top handle with logo charm, a detachable shoulder strap, a front flap closure, a metal logo plaque to the front, gold-tone hardware and suede panels.",
+      "type_id": 4,
+      "price": 75,
+      "shop_id": 3,
+      "sale_price": 60,
+      "language": "en",
+      "min_price": 75,
+      "max_price": 75,
+      "sku": "2002",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "105",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/105/givency_purse.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/105/conversions/givency_purse-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-09T17:18:11.000000Z",
+      "updated_at": "2021-12-23T18:01:53.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 57,
+    "user_id": 2,
+    "shop_id": 3,
+    "product_id": 103,
+    "question": "How many pockets does it have?",
+    "answer": "3 pckets",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:13:27.000000Z",
+    "updated_at": "2022-03-18T10:39:40.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 103,
+      "name": "Armani Purse",
+      "slug": "armani-purse",
+      "description": "Black logo embossed messenger bag from Giorgio Armani featuring an adjustable shoulder strap, a top zip fastening and a front zip pocket.",
+      "type_id": 4,
+      "price": 80,
+      "shop_id": 3,
+      "sale_price": 72,
+      "language": "en",
+      "min_price": 80,
+      "max_price": 80,
+      "sku": "2002",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "104",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/104/Armani_purse.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/104/conversions/Armani_purse-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-09T17:16:29.000000Z",
+      "updated_at": "2021-12-23T18:01:56.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 56,
+    "user_id": 2,
+    "shop_id": 3,
+    "product_id": 102,
+    "question": "Hi\nWhat is the maximum capacity.",
+    "answer": "3-4 kgs",
+    "deleted_at": null,
+    "created_at": "2022-03-18T10:12:16.000000Z",
+    "updated_at": "2022-03-18T10:39:51.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 102,
+      "name": "Armani Leather Purse",
+      "slug": "armani-leather-purse",
+      "description": "The name Giorgio Armani has become synonymous with clean lines and Italian style. One of the most recognisable fashion houses in the world, the label has dressed some of the world’s most beautiful women.",
+      "type_id": 4,
+      "price": 50,
+      "shop_id": 3,
+      "sale_price": 40,
+      "language": "en",
+      "min_price": 50,
+      "max_price": 50,
+      "sku": "2001",
+      "quantity": 50,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "simple",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "103",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/103/Armani_leather_purse.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/103/conversions/Armani_leather_purse-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-09T17:12:48.000000Z",
+      "updated_at": "2021-12-23T18:01:58.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 1,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 1,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 55,
+    "user_id": 2,
+    "shop_id": 2,
+    "product_id": 113,
+    "question": "Can you make it yellow?",
+    "answer": "yes please provide us with the size details",
+    "deleted_at": null,
+    "created_at": "2022-03-18T09:22:43.000000Z",
+    "updated_at": "2022-03-18T10:40:07.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 113,
+      "name": "Forever 21 Solid Bodycon Midi Dress",
+      "slug": "forever-21-solid-bodycon-midi-dress",
+      "description": "Grey solid woven bodycon dress, has a round neck, sleeveless, straight hem",
+      "type_id": 5,
+      "price": null,
+      "shop_id": 2,
+      "sale_price": null,
+      "language": "en",
+      "min_price": 100,
+      "max_price": 120,
+      "sku": null,
+      "quantity": 1000,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "variable",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "115",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/115/FOREVER_21.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/115/conversions/FOREVER_21-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [
+        {
+          "id": "672",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/671/Striped-Dress.png",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/671/conversions/Striped-Dress-thumbnail.jpg"
+        },
+        {
+          "id": "768",
+          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/767/FOREVER_21.jpg",
+          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/767/conversions/FOREVER_21-thumbnail.jpg"
+        }
+      ],
+      "deleted_at": null,
+      "created_at": "2021-03-09T18:01:23.000000Z",
+      "updated_at": "2021-12-23T18:01:24.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 3,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 3,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  },
+  {
+    "id": 54,
+    "user_id": 2,
+    "shop_id": 2,
+    "product_id": 111,
+    "question": "Is it silk or linen?",
+    "answer": "Its acutally cotton",
+    "deleted_at": null,
+    "created_at": "2022-03-18T09:22:17.000000Z",
+    "updated_at": "2022-03-18T10:40:15.000000Z",
+    "positive_feedbacks_count": 0,
+    "negative_feedbacks_count": 0,
+    "my_feedback": null,
+    "abusive_reports_count": 0,
+    "product": {
+      "id": 111,
+      "name": "Mango Self Striped A Line Dress",
+      "slug": "mango-self-striped-a-line-dress",
+      "description": "Off-White self-striped knitted midi A-line dress, has a scoop neck, sleeveless, straight hem",
+      "type_id": 5,
+      "price": null,
+      "shop_id": 2,
+      "sale_price": null,
+      "language": "en",
+      "min_price": 70,
+      "max_price": 81,
+      "sku": null,
+      "quantity": 1000,
+      "in_stock": 1,
+      "is_taxable": 0,
+      "shipping_class_id": null,
+      "status": "publish",
+      "product_type": "variable",
+      "unit": "1 pc(s)",
+      "height": null,
+      "width": null,
+      "length": null,
+      "image": {
+        "id": "112",
+        "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/112/mango.jpg",
+        "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/112/conversions/mango-thumbnail.jpg"
+      },
+      "video": null,
+      "gallery": [],
+      "deleted_at": null,
+      "created_at": "2021-03-09T17:56:41.000000Z",
+      "updated_at": "2021-12-23T18:01:30.000000Z",
+      "author_id": null,
+      "manufacturer_id": null,
+      "is_digital": 0,
+      "is_external": 0,
+      "external_product_url": null,
+      "external_product_button_text": null,
+      "ratings": 5,
+      "total_reviews": 1,
+      "rating_count": [
+        {
+          "rating": 5,
+          "total": 1,
+          "positive_feedbacks_count": 0,
+          "negative_feedbacks_count": 0,
+          "my_feedback": null,
+          "abusive_reports_count": 0
+        }
+      ],
+      "my_review": null,
+      "in_wishlist": false,
+      "blocked_dates": [],
+      "translated_languages": [
+        "en"
+      ]
+    },
+    "user": {
+      "id": 2,
+      "name": "Customer",
+      "email": "customer@demo.com",
+      "email_verified_at": null,
+      "created_at": "2021-08-18T10:30:29.000000Z",
+      "updated_at": "2021-08-18T13:17:53.000000Z",
+      "is_active": 1,
+      "shop_id": null
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_REST_API_ENDPOINT": "",
+      "NEXT_PUBLIC_SHOP_URL": "",
+      "NEXT_PUBLIC_GOOGLE_MAP_API_KEY": "",
+      "NEXT_PUBLIC_AUTH_TOKEN_KEY": "AUTH_CRED",
+      "APPLICATION_MODE": "production",
+      "NEXT_PUBLIC_DEFAULT_LANGUAGE": "en",
+      "NEXT_PUBLIC_ENABLE_MULTI_LANG": "false",
+      "NEXT_PUBLIC_AVAILABLE_LANGUAGES": "en"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+mutation VerifyCheckout($input: CheckoutVerificationInput!) {
+  verifyCheckout(input: $input) {
+    total_tax
+    shipping_charge
+    unavailable_products
+    wallet_amount
+    wallet_currency
+  }
+}

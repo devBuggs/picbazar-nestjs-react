@@ -1,0 +1,130 @@
+query Types(
+  $text: String
+  $language: String
+  $orderBy: [QueryTypesOrderByOrderByClause!]
+) {
+  types(text: $text, language: $language, orderBy: $orderBy) {
+    id
+    name
+    language
+    translated_languages
+    slug
+    icon
+    banners {
+      title
+      description
+      image {
+        id
+        thumbnail
+        original
+      }
+    }
+    promotional_sliders {
+      id
+      thumbnail
+      original
+    }
+  }
+}
+
+query Type($id: ID, $language: String, $slug: String) {
+  type(id: $id, language: $language, slug: $slug) {
+    id
+    name
+    slug
+    language
+    translated_languages
+    icon
+    banners {
+      title
+      description
+      image {
+        id
+        thumbnail
+        original
+      }
+    }
+    settings {
+      isHome
+      layoutType
+      productCard
+    }
+    promotional_sliders {
+      id
+      thumbnail
+      original
+    }
+  }
+}
+
+mutation CreateType($input: CreateTypeInput!) {
+  createType(input: $input) {
+    id
+    name
+    slug
+    icon
+    language
+    translated_languages
+    banners {
+      title
+      description
+      image {
+        id
+        thumbnail
+        original
+      }
+    }
+    settings {
+      isHome
+      layoutType
+      productCard
+    }
+    promotional_sliders {
+      id
+      thumbnail
+      original
+    }
+  }
+}
+mutation UpdateType($input: UpdateTypeInput!) {
+  updateType(input: $input) {
+    id
+    name
+    slug
+    language
+    translated_languages
+    icon
+    banners {
+      title
+      description
+      image {
+        id
+        thumbnail
+        original
+      }
+    }
+    settings {
+      isHome
+      layoutType
+      productCard
+    }
+    promotional_sliders {
+      id
+      thumbnail
+      original
+    }
+  }
+}
+mutation DeleteType($id: ID!) {
+  deleteType(id: $id) {
+    id
+    name
+    slug
+    icon
+    promotional_sliders {
+      id
+      thumbnail
+      original
+    }
+  }
+}

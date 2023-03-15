@@ -1,0 +1,77 @@
+# import PaginatorParts from './paginator.fragment.graphql'
+fragment QuestionPart on Question {
+  id
+  question
+  answer
+  user {
+    name
+  }
+  user_id
+  product {
+    id
+    name
+    slug
+    image {
+      id
+      original
+      thumbnail
+    }
+  }
+  product_id
+  shop_id
+  feedbacks {
+    id
+    user_id
+    positive
+    negative
+  }
+  positive_feedbacks_count
+  negative_feedbacks_count
+  my_feedback {
+    id
+    user_id
+    positive
+    negative
+  }
+  created_at
+  updated_at
+}
+
+query Questions(
+  $shop_id: ID
+  $first: Int
+  $page: Int
+  $orderBy: [QueryQuestionsOrderByOrderByClause!]
+) {
+  all_questions(
+    shop_id: $shop_id
+    first: $first
+    page: $page
+    orderBy: $orderBy
+  ) {
+    data {
+      ...QuestionPart
+    }
+    paginatorInfo {
+      ...PaginatorParts
+    }
+  }
+}
+
+query Question($id: ID) {
+  question(id: $id) {
+    ...QuestionPart
+  }
+}
+
+mutation ReplyQuestion($id: ID!, $input: UpdateQuestionInput!) {
+  updateQuestion(id: $id, input: $input) {
+    ...QuestionPart
+  }
+}
+
+mutation DeleteQuestion($id: ID!) {
+  deleteQuestion(id: $id) {
+    ...QuestionPart
+  }
+}
