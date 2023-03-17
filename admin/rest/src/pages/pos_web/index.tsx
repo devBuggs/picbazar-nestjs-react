@@ -1,10 +1,8 @@
 import Card from '@/components/common/card';
 import Layout from '@/components/layouts/admin';
-import ErrorMessage from '@/components/ui/error-message';
 import Loader from '@/components/ui/loader/loader';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-// import ShopList from '@/components/shop/shop-list';
 import PosWebMenu from '@/components/posweb/pos-web-menu';
 import { useState } from 'react';
 import Search from '@/components/common/search';
@@ -28,8 +26,7 @@ export default function HomePage() {
             <Card className="mb-8 flex flex-col items-center justify-between md:flex-row">
                 <div className="mb-4 md:mb-0 md:w-1/4">
                     <h1 className="text-lg font-semibold text-heading">
-                        {/* {t('common:sidebar-nav-item-shops')} */}
-                        Pos web
+                        {t('POS WEB')}
                     </h1>
                 </div>
 
