@@ -32,7 +32,7 @@ const PosWebMenu = ({
         { id: 2, label: "EDIT POS PRODUCT", style: {}, actionType: 'edit', pathName: '/pos_web/pos' },
         { id: 3, label: "WEB PRODUCT ENTRY", style: {}, actionType: 'create', pathName: '/pos_web/web' },
         { id: 4, label: "EDIT WEB PRODUCT", style: {}, actionType: 'edit', pathName: '/pos_web/web' },
-        { id: 5, label: "POS TO WEB CONVERTER", style: {}, actionType: 'create' },
+        { id: 5, label: "POS TO WEB CONVERTER", style: {}, actionType: 'convert', pathName: '/pos_web/pos-to-web' },
         { id: 6, label: "LIST ALL PRODUCT", style: { bg: 'bg-green-700', color: 'text-white	' }, actionType: 'list' }
     ]
 
@@ -56,7 +56,6 @@ const PosWebMenu = ({
                     })
                 }
             </div>
-
         </>
     );
 };

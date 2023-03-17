@@ -1,3 +1,5 @@
+
+
 import Button from '@/components/ui/button';
 import Input from '@/components/ui/input';
 import { Controller, useFieldArray, useForm, SubmitHandler } from 'react-hook-form';
@@ -29,11 +31,21 @@ import { useRouter } from 'next/router';
 import React from 'react';
 // import FormCard from './FormComponent/FormCard';
 // import FormCompleted from './FormComponent/FormCompleted';
+// import {
+//     BillingInfo,
+//     ConfirmPurchase,
+//     PersonalInfo,
+//     GalleryImage,
+//     MediaContent,
+//     ProductInfo,
+//     SupplierInfo,
+//     PreviewProduct
+// } from "./FormComponent/Forms";
+import MultiStep from 'react-multistep';
+
 
 import '../../assets/css/pos_web/prog-style.module.css';
 import '../../assets/css/pos_web/prog-track.module.css';
-
-import MultiStep from 'react-multistep';
 
 type FormValues = {
     barcodeNo: number;
@@ -73,45 +85,18 @@ const PosForm = ({ initialValues }: { initialValues?: any }) => {
     return (
         <>
             <Card className='mb-5'>
-                {
-                    formActionType === "create" ? <h3 className='text-xl'>WEB PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT WEB PRODUCT ENTRY</h3>
-                }
+                <h3 className='text-xl'>POS TO WEB Convert</h3>
             </Card>
             
             <Card>
                 <MultiStep showNavigation={true}  >
                     <StepOne title='StepOne'/>
                     <StepTwo title='StepTwo'/>
-                    <StepThree title='StepThree'/>
+                    {/* <StepThree title='StepThree'/> */}
                     <StepFour title='StepFour'/>
                     <StepFive title='StepFive'/>
                 </MultiStep>
             </Card>
-            
-            
-            <form onSubmit={handleSubmit(onSubmit)}>
-                {/* <FormCard currentStep={formStep} prevFormStep={prevFormStep}>
-                    {formStep == 0 && (
-                    <GalleryImage formStep={formStep} nextFormStep={nextFormStep} />
-                    )}
-                    {formStep == 1 && (
-                    <MediaContent formStep={formStep} nextFormStep={nextFormStep} />
-                    )}
-                    {formStep == 2 && (
-                    <ProductInfo formStep={formStep} nextFormStep={nextFormStep} />
-                    )}
-
-                    {formStep == 3 && (
-                    <SupplierInfo formStep={formStep} nextFormStep={nextFormStep} />
-                    )}
-
-                    {formStep == 4 && (
-                    <PreviewProduct formStep={formStep} nextFormStep={nextFormStep} />
-                    )}
-
-                    {formStep > 4 && <FormCompleted />}
-                </FormCard> */}
-            </form>
         </>
     )
 };
