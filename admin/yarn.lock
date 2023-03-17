@@ -4339,6 +4339,11 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+goober@2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.12.tgz#6c1645314ac9a68fe76408e1f502c63df8a39042"
+  integrity sha512-yXHAvO08FU1JgTXX6Zn6sYCUFfB/OJSX8HHjDSgerZHZmFKAb08cykp5LBw5QnmyMcZyPRMqkdyHUSSzge788Q==
+
 got@^9.6.0:
   version "9.6.0"
   resolved "https://registry.yarnpkg.com/got/-/got-9.6.0.tgz#edf45e7d67f99545705de1f7bbeeeb121765ed85"
@@ -4572,6 +4577,11 @@ ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
+
+immer@^9.0.19:
+  version "9.0.19"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.19.tgz#67fb97310555690b5f9cd8380d38fc0aabb6b38b"
+  integrity sha512-eY+Y0qcsB4TZKwgQzLaE/lqYMlKhv5J9dyd2RhhtGhNo2njPXDqU9XPfcNfa3MIDsdtZt5KlkIsirlo4dHsWdQ==
 
 immutable@~3.7.6:
   version "3.7.6"
@@ -6502,6 +6512,13 @@ react-laag@2.0.3:
   integrity sha512-f3LYHu6kOU+Ii63/ZkzLDobGLf2Q4EYjIA/TUHmaQmBv5use09ClPy5tEgXazkTnp/PC1Sivb+wr0+q8mv9ITQ==
   dependencies:
     tiny-warning "^1.0.3"
+
+react-multistep@^5.5.8:
+  version "5.5.8"
+  resolved "https://registry.yarnpkg.com/react-multistep/-/react-multistep-5.5.8.tgz#63a3f1248faa1234b409a2099067566ceb4bc0c5"
+  integrity sha512-+LVbaGB4481Op7Bo3uzl5eLgPnjqz4OC0gPN843njVFgM6Exgk3ZE79EIwnX940tI73rKWLn4FBASQiH/nFkDw==
+  dependencies:
+    goober "2.1.12"
 
 react-onclickoutside@^6.12.0:
   version "6.12.1"
