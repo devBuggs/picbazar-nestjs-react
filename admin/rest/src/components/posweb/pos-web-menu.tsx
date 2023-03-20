@@ -38,7 +38,7 @@ const PosWebMenu = ({
 
     return (
         <>
-            <div className="mb-6 overflow-hidden rounded shadow flex flex-col ">
+            <div className="mb-6 overflow-hidden rounded shadow flex flex-col p-5 ">
                 {
                     PosWebMenus.map(item => {
                         return <Link
