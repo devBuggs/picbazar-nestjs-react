@@ -13,8 +13,12 @@ import GooglePlacesAutocomplete from '@/components/form/google-places-autocomple
 import Label from '@/components/ui/label';
 import { getIcon } from '@/utils/get-icon';
 import omit from 'lodash/omit';
+// import {PosInitialValues } from '@/types';
+import SelectInput from '../ui/select-input';
 
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { unitOptions, newProduct, existingProduct } from '@/utils/constants/pos-web';
 
 type FormValues = {
     barcodeNo: number;
@@ -22,61 +26,62 @@ type FormValues = {
     supplierName: string;
     designNumber: number;
     sizeWeight: number;
-    availableQty: number;
+    sizeWeightUnit: object;
+    availableQuantity: number;
     purchasePrice: number;
     salePrice: number;
 };
 
-const PosForm = ({ initialValues }: { initialValues?: any }) => {
+const PosForm = ({ createNewProduct, updateExistingProduct, makeDuplicate, generateBarCode, printBarcode, saveToDraft }: { createNewProduct?: any, updateExistingProduct?: any, makeDuplicate?: any, generateBarCode?: any, printBarcode?: any, saveToDraft?: any }) => {
+
+    const router = useRouter();
+    const [actionType] = useState(router?.query?.action);
+    const [defaultValues] = useState( actionType === "edit" ? existingProduct : newProduct )
+
+    console.warn("POS form action :: ", actionType, "\nInitial Values :: ", defaultValues);
+
     const {
         register,
         handleSubmit,
         formState: { errors },
         getValues,
         control
-    } = useForm<FormValues>();
+    } = useForm<FormValues>({defaultValues});
 
-    const onSubmit: SubmitHandler<FormValues> = data => console.log(data);
+    const onSubmit: SubmitHandler<FormValues> = data => console.log("=>>>>>>>>", data);
     
     const { t } = useTranslation();
-
-    const router = useRouter();
-    const formActionType = router?.query?.action;
-    // console.log("formActionType == ", router?.query?.action);
-
 
     return (
         <>
             <Card className='mb-5'>
                 {
-                    formActionType === "create" ? <h3 className='text-xl'>POS PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT POS PRODUCT ENTRY</h3>
+                    actionType === "create" ? <h3 className='text-xl'>POS PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT POS PRODUCT ENTRY</h3>
                 }
             </Card>
             
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Card className="w-full sm:w-8/12 md:w-2/3">
-
                     {
-                        formActionType === "edit" ? 
+                        actionType === "edit" ? 
                             <div className="text-end mb-5">
                                 <Button>
                                     {t('Scan Barcode')}
                                 </Button>
-                            </div> : ''
+                            </div> : '' 
                     }
 
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Barcode No.`}
+                        label={t('Barcode No.')}
                         {...register('barcodeNo')}
                         variant="outline"
                         className="mb-5"
+                        disabled={true}
                         error={t(errors.barcodeNo?.message!)}
                         />
 
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Product Name`}
+                        label={t('Product Name')}
                         {...register('productName', {
                             required: true
                         })}
@@ -86,8 +91,7 @@ const PosForm = ({ initialValues }: { initialValues?: any }) => {
                         />
 
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Supplier Name`}
+                        label={t('Supplier Name')}
                         {...register('supplierName', {
                             required: true,
                             maxLength: 20,
@@ -99,8 +103,7 @@ const PosForm = ({ initialValues }: { initialValues?: any }) => {
                         />
 
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Design Number`}
+                        label={t('Design Number')}
                         {...register('designNumber', {
                             required: true,
                             maxLength: 20,
@@ -110,33 +113,44 @@ const PosForm = ({ initialValues }: { initialValues?: any }) => {
                         error={t(errors.designNumber?.message!)}
                         />
 
+                    <div className="flex flex-">
+                        <Input
+                            label={t('Size/Weight')}
+                            {...register('sizeWeight', {
+                                required: true,
+                                maxLength: 20,
+                            })}
+                            variant="outline"
+                            className="mb-5 flex-grow"
+                            error={t(errors.sizeWeight?.message!)}
+                            />
+
+                        <div className="sm:col-span-2">
+                            <Label>{t('Unit')}</Label>
+                            <SelectInput
+                                name={'unit'}
+                                control={control}
+                                options={unitOptions}
+                                isClearable={true}
+                                defaultValue={defaultValues.sizeWeightUnit}
+                                // error={t(errors.sizeWeightUnit?.message!)}
+                                />
+                        </div>
+                    </div>
+
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Size/Weight`}
-                        {...register('sizeWeight', {
+                        label={t('Available Quantity')}
+                        {...register('availableQuantity', {
                             required: true,
                             maxLength: 20,
                         })}
                         variant="outline"
                         className="mb-5"
-                        error={t(errors.sizeWeight?.message!)}
+                        error={t(errors.availableQuantity?.message!)}
                         />
 
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Available Qty`}
-                        {...register('availableQty', {
-                            required: true,
-                            maxLength: 20,
-                        })}
-                        variant="outline"
-                        className="mb-5"
-                        error={t(errors.availableQty?.message!)}
-                        />
-
-                    <Input
-                        // label={t('form:input-label-name')}
-                        label={`Purchase Price`}
+                        label={t('Purchase Price')}
                         {...register('purchasePrice', {
                             required: true,
                             maxLength: 20,
@@ -147,8 +161,7 @@ const PosForm = ({ initialValues }: { initialValues?: any }) => {
                         />
 
                     <Input
-                        // label={t('form:input-label-name')}
-                        label={`Sale Price`}
+                        label={t('Sale Price')}
                         {...register('salePrice', {
                             required: true,
                             maxLength: 20,
@@ -159,34 +172,34 @@ const PosForm = ({ initialValues }: { initialValues?: any }) => {
                         />
 
                     <div className="text-end mb-5">
-                        <Button type='button' className='mr-2'>
-                            {formActionType === "edit"
-                            ? t('Make Duplicate @')
+                        <Button type='button' className='mr-2' onClick={makeDuplicate}>
+                            {actionType === "edit"
+                            ? t('Make Duplicate')
                             : t('Make Duplicate')}
                         </Button>
 
-                        <Button type='button' className='mr-2'>
-                            {formActionType === "edit"
-                            ? t('Print Barcode @')
+                        <Button type='button' className='mr-2' onClick={printBarcode}>
+                            {actionType === "edit"
+                            ? t('Print Barcode')
                             : t('Print Barcode')}
                         </Button>
 
-                        {formActionType === "create" && <Button type='button' className='mr-2'>{t('Draft')}</Button>}
-
-                        <Button type='submit'>
-                            {formActionType === "edit"
-                            ? t('form:button-label-update')
-                            : t('form:button-label-save')}
+                        <Button type='button' className='mr-2' onClick={() => console.log("Add New Button Clicked!!!")}>
+                            {actionType === "edit"
+                            ? t('Add New')
+                            : t('Add New')}
                         </Button>
-                    </div>
 
+                        {actionType === "create" && <Button type='button' onClick={saveToDraft} className='mr-2'>{t('Draft')}</Button>}
+
+                        {actionType === "edit"
+                            ? <Button type='submit' onClick={updateExistingProduct}>{t('form:button-label-update')}</Button>
+                            : <Button type='submit' onClick={createNewProduct}>{t('form:button-label-save')}</Button>
+                        }
+
+                    </div>
                 </Card>
             </form>
-
-            
-
-
-
         </>
     )
 };
