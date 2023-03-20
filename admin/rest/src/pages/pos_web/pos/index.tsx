@@ -12,9 +12,42 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export default function CreatePosProductPage() {
     const { t } = useTranslation();
 
+    // const [newPos, setNewPos] = useState({});
+
+    const generateBarCode = () => {
+        console.log("========== Generating Barcode ==========");
+    }
+
+    const makeDuplicate = () => {
+        console.log("========== Make Duplicate Product ==========");
+    }
+
+    const createNewProduct = () => {
+        console.log("========== Create New Product ==========");
+    }
+
+    const updateExistingProduct = () => {
+        console.log("========== Update Existing Product ==========");
+    }
+
+    const printBarcode = () => {
+        console.log("========== Print Barcode ==========");
+    }
+
+    const saveToDraft = () => {
+        console.log("========== Save To Draft ==========");
+    }
+
     return (
         <>
-            <PosForm />
+            <PosForm 
+                createNewProduct={createNewProduct}
+                updateExistingProduct={updateExistingProduct}
+                makeDuplicate={makeDuplicate}
+                generateBarCode={generateBarCode}
+                printBarcode={printBarcode}
+                saveToDraft={saveToDraft}
+                />
         </>
     );
 }
