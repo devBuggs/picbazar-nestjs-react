@@ -293,6 +293,46 @@ export interface Balance {
   payment_info?: PaymentInfo;
 }
 
+export interface PosWebMenu {
+  id: string;
+  label: string;
+  style: object;
+  actionType: string;
+  pathName: string;
+}
+
+export interface PosInitialValues {
+  barcodeNo: number;
+  productName: string;
+  supplierName: string;
+  designNumber: number;
+  sizeWeight: number;
+  availableQuantity: number;
+  purchasePrice: number;
+  salePrice: number;
+}
+
+export interface WebInitialValues {
+  barcodeNo: number;
+  productGAlleryImage: string;
+  productMediaItems: object;
+  productName: string;
+  productDescription: string;
+  productSizeWeight: object;
+  supplierName: string;
+  designNumber: number;
+  width: number;
+  height: number;
+  brandMenufacturer: string;
+  availableQuantity: object;
+  purchasePrice: number;
+  salePrice: number;
+  tags: string;
+  variationFg: boolean;
+  variationData: object;
+  category: string;
+}
+
 export interface PaymentInfo {
   account?: string;
   name?: string;
