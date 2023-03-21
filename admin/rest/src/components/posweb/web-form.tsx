@@ -56,23 +56,6 @@ type StepFormTypes = {
     errors: any;
 }
 
-const defaultValues = {
-    barcodeNo: 5602000001,
-    productName: "productName",
-    productDescription: "dummy product",
-    sizeWeight: 12,
-    supplierName: "Bhagwan Singh",
-    designNumber: 999902,
-    width: 12,
-    height: 22,
-    brandManufacturer: "Ecorpin Corp.",
-    availableQuantity: 2,
-    purchasePrice: 999999,
-    salePrice: 1000000,
-    tags: "",
-    category: "",
-}
-
 const WebForm = ({ initialValues }: { initialValues?: any }) => {
 
     const router = useRouter();
@@ -87,7 +70,7 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
         formState: { errors },
         getValues,
         control
-    } = useForm<FormValues>({});
+    } = useForm<FormValues>({defaultValues});
 
     const onSubmit: SubmitHandler<FormValues> = data => console.log("=>>>>>", data);
     
@@ -129,7 +112,9 @@ const StepOne = ({title, control, actionType, register, errors}: StepFormTypes) 
                         <Input
                             name='barcodeNo'
                             label={t('Barcode No')}
-                            {...register('barcodeNo')}
+                            {...register('barcodeNo', {
+                                required: true
+                            })}
                             variant="outline"
                             className="mb-5 w-2/3"
                             error={t(errors.barcodeNo?.message!)}
@@ -162,7 +147,9 @@ const StepOne = ({title, control, actionType, register, errors}: StepFormTypes) 
                 <Card className="w-full sm:w-8/12 md:w-2/3">
                     <FileInput 
                         control={control} 
-                        {...register('productGalleryImage')}
+                        {...register('productGalleryImage', {
+                            required: true
+                        })}
                         name="productGalleryImage" 
                         multiple={false} 
                         error={t(errors.productGalleryImage?.message!)}
@@ -189,7 +176,9 @@ const StepTwo = ({title, control, actionType, register, errors}: StepFormTypes) 
                         control={control} 
                         name="logo"  
                         multiple={true} 
-                        {...register('productMediaItems')}
+                        {...register('productMediaItems', {
+                            required: true
+                        })}
                         error={t(errors.productMediaItems?.message!)}
                         />
                 </Card>
@@ -213,7 +202,9 @@ const StepThree = ({title, control, actionType, register, errors }: StepFormType
                 <Card className="w-full sm:w-8/12 md:w-2/3">
                     <Input
                         label={t('Barcode No.')}
-                        {...register('barcodeNo')}
+                        {...register('barcodeNo', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.barcodeNo?.message!)}
@@ -221,7 +212,9 @@ const StepThree = ({title, control, actionType, register, errors }: StepFormType
 
                     <Input
                         label={t('Product Name')}
-                        {...register('productName')}
+                        {...register('productName', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.productName?.message!)}
@@ -229,7 +222,9 @@ const StepThree = ({title, control, actionType, register, errors }: StepFormType
 
                     <Input
                         label={t('Product Description')}
-                        {...register('productDescription')}
+                        {...register('productDescription', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.productDescription?.message!)}
@@ -239,8 +234,7 @@ const StepThree = ({title, control, actionType, register, errors }: StepFormType
                         <Input
                             label={t('Size/Weight')}
                             {...register('productSizeWeight', {
-                                required: true,
-                                maxLength: 20,
+                                required: true
                             })}
                             variant="outline"
                             className="mb-5 flex-grow mr-1"
@@ -254,7 +248,9 @@ const StepThree = ({title, control, actionType, register, errors }: StepFormType
                                 control={control}
                                 options={unitOptions}
                                 isClearable={true}
-                                {...register('productSizeWeightUnit')}
+                                {...register('productSizeWeightUnit', {
+                                    required: true
+                                })}
                                 error={t(errors.productSizeWeightUnit?.message!)}
                                 />
                         </div>
@@ -280,7 +276,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
                 <Card className="w-full sm:w-8/12 md:w-2/3">
                     <Input
                         label={t('Supplier Name')}
-                        {...register('supplierName')}
+                        {...register('supplierName', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.supplierName?.message!)}
@@ -288,7 +286,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
 
                     <Input
                         label={t('Design Number')}
-                        {...register('designNumber')}
+                        {...register('designNumber', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.designNumber?.message!)}
@@ -297,7 +297,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
                     <div className="flex flex-row">
                         <Input
                             label={t('Width')}
-                            {...register('width')}
+                            {...register('width', {
+                                required: true
+                            })}
                             variant="outline"
                             className="mb-5 w-full mr-1"
                             error={t(errors.width?.message!)}
@@ -305,7 +307,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
 
                         <Input
                             label={t('Height')}
-                            {...register('height')}
+                            {...register('height', {
+                                required: true
+                            })}
                             variant="outline"
                             className="mb-5 w-full ml-1"
                             error={t(errors.height?.message!)}
@@ -314,7 +318,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
 
                     <Input
                         label={t('Brand / Manufacturer')}
-                        {...register('brandMenufacturer')}
+                        {...register('brandMenufacturer', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.brandMenufacturer?.message!)}
@@ -324,8 +330,7 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
                         <Input
                             label={t('Available Quantity')}
                             {...register('availableQuantity', {
-                                required: true,
-                                maxLength: 20,
+                                required: true
                             })}
                             variant="outline"
                             className="mb-5 flex-grow mr-1"
@@ -339,7 +344,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
                                 control={control}
                                 options={unitOptions}
                                 isClearable={true}
-                                {...register('productQuantityUnit')}
+                                {...register('productQuantityUnit', {
+                                    required: true
+                                })}
                                 error={t(errors.productQuantityUnit?.message!)}
                                 />
                         </div>
@@ -347,7 +354,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
 
                     <Input
                         label={t('Purchase Price')}
-                        {...register('purchasePrice')}
+                        {...register('purchasePrice', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.purchasePrice?.message!)}
@@ -355,7 +364,9 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
 
                     <Input
                         label={t('Sale Price')}
-                        {...register('salePrice')}
+                        {...register('salePrice', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.salePrice?.message!)}
@@ -381,7 +392,9 @@ const StepFive = ({title, control, actionType, register, errors}: StepFormTypes)
                 <Card className="w-full sm:w-8/12 md:w-2/3">
                     <Input
                         label={t('Tags')}
-                        {...register('tags')}
+                        {...register('tags', {
+                            required: true
+                        })}
                         variant="outline"
                         className="mb-5"
                         error={t(errors.tags?.message!)}
@@ -392,7 +405,9 @@ const StepFive = ({title, control, actionType, register, errors}: StepFormTypes)
                             label={t('Make As Variation')}
                             control={control}
                             name={'productVariation'}
-                            {...register('variationFg')}
+                            {...register('variationFg', {
+                                required: true
+                            })}
                             error={t(errors.tag?.message!)}
                             />
                     </div>
@@ -400,7 +415,9 @@ const StepFive = ({title, control, actionType, register, errors}: StepFormTypes)
                     <div className="flex flex-row ">
                         <Input
                             label={t('Barcode Number')}
-                            {...register('barcodeNo')}
+                            {...register('barcodeNo', {
+                                required: true
+                            })}
                             variant="outline"
                             className="mb-5 w-2/3 mr-1"
                             error={t(errors.barcodeNo?.message!)}
@@ -433,7 +450,9 @@ const StepFive = ({title, control, actionType, register, errors}: StepFormTypes)
                     <div className="flex flex-row ">
                         <Input
                             label={t('Category')}
-                            {...register('category')}
+                            {...register('category', {
+                                required: true
+                            })}
                             variant="outline"
                             className="mb-5 w-2/3 mr-1"
                             error={t(errors.category?.message!)}
