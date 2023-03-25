@@ -21,7 +21,7 @@ const existingProduct = {
 }
 
 const newProduct = {
-    barcodeNo: Date.now(),
+    barcodeNo: 55660022,
     productName: "New product",
     supplierName: "New supplier",
     designNumber: 0,

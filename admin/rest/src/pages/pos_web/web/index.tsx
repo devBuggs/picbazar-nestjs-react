@@ -8,10 +8,6 @@ import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-// import "../../../assets/css/pos_web/prog-style.css"
-// import "../../../assets/css/pos_web/prog-track.css";
-
-
 export default function CreatePosProductPage() {
     const { t } = useTranslation();
 
