@@ -8,28 +8,47 @@ import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import JsBarcode from "jsbarcode";
+import { Html5QrcodeScanner } from 'html5-qrcode';
+import { useRouter } from 'next/router';
 
 
 export default function CreatePosProductPage() {
     const { t } = useTranslation();
+    const router = useRouter();
+    const [actionType] = useState(router?.query?.action);
 
     const [stateFlag, setStateFlag] = React.useState({ 
         printBarcodeFg: false, 
         makeDuplicateFg: false,
         inputBarcodeRef: React.useRef(null),
         barcodeData: React.useRef(null),
+        editPosAction: router?.query?.action === 'edit' ? true : false,
+        formData: {
+            barcodeNo: 500000000,
+            productName: "Dummy Product 001",
+            supplierName: "Ecorpin Corp.",
+            designNumber: 56020001,
+            sizeWeight: 11,
+            sizeWeightUnit: {label: "inch", value: "inch"},
+            availableQuantity: 2,
+            purchasePrice: 9999,
+            salePrice: 8099
+        }
     });
 
     const makeDuplicate = () => {
         console.log("========== Make Duplicate Product ==========");
     }
 
-    // done
+    // working
     const createNewProduct = (formData: object) => {
         console.log("========== Create New Product ==========");
         console.log("form data :: ", formData);
-        setStateFlag({...stateFlag, printBarcodeFg: true});
-        JsBarcode( stateFlag?.barcodeData?.current, formData?.productName.toString(), formData);
+        // setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
+        JsBarcode(stateFlag?.barcodeData?.current, formData?.barcodeNo, {
+            format: 'CODE128',
+            displayValue: true,
+        });
     }
 
     const updateExistingProduct = () => {
@@ -50,15 +69,59 @@ export default function CreatePosProductPage() {
         console.log("========== Save To Draft ==========");
     }
 
-    const handleScanBarcode = async () => {
+    const handleScanBarcode = async (e: any) => {
         console.log("========== Scanning Barcode ===========");
-        const inputBarcode: any = stateFlag?.inputBarcodeRef?.current;
-        // Handle the result
-        console.log(" barcode data :: ", inputBarcode?.files[0]);
+        // scanner.render(success, error);
     }
+
+    React.useLayoutEffect(() => {
+        if (actionType === "edit") {
+            console.log("useEffect only for edit pos");
+            const scanner = new Html5QrcodeScanner('reader', {
+                qrbox: {
+                    width: 300,
+                    height: 300
+                },
+                fps: 20
+            }, false);
+            const success = (result: any) => {
+                console.log("Result :: ", result);
+                document.getElementById('result')?.innerHTML = `
+                    <h2>Scan Success!</h2>
+                    ${ result }
+                `;
+                scanner.clear();
+                document.getElementById("reader")?.remove();
+            }
+            const error = (error: any) => {
+                console.error("Result :: ", error);
+                setStateFlag({...stateFlag, });
+            }
+            scanner.render(success, error);
+        } else {
+            console.log("useEffect only for create pos");
+        }
+        
+    }, [stateFlag.editPosAction])
 
     return (
         <>
+            <Card className='mb-5'>
+                {
+                    actionType  ? <h3 className='text-xl'>POS PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT POS PRODUCT ENTRY</h3>
+                }
+            </Card>
+
+            {
+                actionType === "edit" ? 
+                    <div className="text-end mb-5">
+                        <div>
+                            <div id="reader"></div>
+                            <div id="result"></div>
+                        </div>
+                    </div> : '' 
+            }
+            
             <PosForm 
                 createNewProduct={createNewProduct}
                 updateExistingProduct={updateExistingProduct}
@@ -67,6 +130,7 @@ export default function CreatePosProductPage() {
                 saveToDraft={saveToDraft}
                 scanBarcode={handleScanBarcode}
                 stateFlag={stateFlag}
+                setStateFlag={setStateFlag}
                 />
         </>
     );

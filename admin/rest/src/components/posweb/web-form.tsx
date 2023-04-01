@@ -17,8 +17,11 @@ import omit from 'lodash/omit';
 import { useRouter } from 'next/router';
 import React from 'react';
 
+// import MediaFileInput from "@/components/posweb/component/common/MediaFileInput";
+
 import '../../assets/css/pos_web/prog-style.module.css';
 import '../../assets/css/pos_web/prog-track.module.css';
+import '../../assets/css/pos_web/custom-style.module.css';
 import MultiStep from 'react-multistep';
 import { unitOptions, newWebProduct, existingWebProduct } from '@/utils/constants/pos-web';
 import { useState } from 'react';
@@ -62,7 +65,7 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
     const [actionType] = useState(router?.query?.action);
     const [defaultValues] = useState( actionType === "edit" ? existingWebProduct : newWebProduct )
 
-    console.warn("WEB form action :: ", actionType, "\nInitial Values :: ", defaultValues);
+    // console.warn("WEB form action :: ", actionType, "\nInitial Values :: ", defaultValues);
 
     const {
         register,
@@ -76,6 +79,13 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
     
     const { t } = useTranslation();
 
+    React.useEffect(() => {
+        const prevBtnStyle = `color: #ffffff; background: #009F7F; margin: 0px 15px; padding: 0px 20px; width: 120px; border: 1px solid #009f7f; border-radius: 5%; height: 48px;`
+        const nextBtnStyle = `color: #ffffff; background: #009F7F; margin: 0px 15px; padding: 0px 20px; width: 120px; border: 1px solid #009f7f; border-radius: 5%; height: 48px; float: right;`
+        document.getElementsByTagName('form')[0][1].setAttribute('style', prevBtnStyle);
+        document.getElementsByTagName('form')[0][2].setAttribute('style', nextBtnStyle);
+    });
+
     return (
         <>
             <Card className='mb-5'>
@@ -85,8 +95,8 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
             </Card>
             
             <Card>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <MultiStep showNavigation={true}  >
+                <form className={'web-product'} onSubmit={handleSubmit(onSubmit)}>
+                    <MultiStep showNavigation={true} activeStep={0} showTitles={true} >
                         <StepOne title='StepOne' control={control} actionType={actionType} register={register} errors={errors} />
                         <StepTwo title='StepTwo' control={control} actionType={actionType} register={register} errors={errors} />
                         <StepThree title='StepThree' control={control} actionType={actionType} register={register} errors={errors} />
@@ -316,7 +326,7 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
                             />
                     </div>
 
-                    <Input
+                    {/* <Input
                         label={t('Brand / Manufacturer')}
                         {...register('brandMenufacturer', {
                             required: true
@@ -324,7 +334,29 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
                         variant="outline"
                         className="mb-5"
                         error={t(errors.brandMenufacturer?.message!)}
-                        />
+                        /> */}
+
+                        <div className='flex flex-row'>
+                            <div className="flex-grow mr-1 mb-5">
+                                <Label>{t('Brand/Manufacturer')}</Label>
+                                <SelectInput
+                                    name={'brandMenufacturer'}
+                                    control={control}
+                                    options={unitOptions}
+                                    isClearable={true}
+                                    {...register('brandMenufacturer', {
+                                        required: true
+                                    })}
+                                    error={t(errors.brandMenufacturer?.message!)}
+                                    />
+                            </div>
+
+                            <div className='sm:col-span-2 ml-1'>
+                                <Label>{t('Add Brand')}</Label>
+                                <Button>Add +</Button>
+                            </div>
+
+                        </div>
 
                     <div className="flex flex-row">
                         <Input

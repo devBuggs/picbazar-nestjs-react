@@ -3,18 +3,18 @@ const unitOptions = [
     {label: "inch", value: "inch"},
     {label: "mm", value: "mm"},
     {label: "cm", value: "cm"},
-    {label: "gm", value: "gm"},
+    {label: "gram", value: "gram"},
     {label: "kg", value: "kg"},
-    {label: "NOS", value: "nos"}
+    {label: "nos", value: "nos"}
 ];
 
 const existingProduct = {
-    barcodeNo: Date.now(),
+    barcodeNo: 55660099,
     productName: "Dummy Product 001",
     supplierName: "Bhagwan Singh",
     designNumber: 56020001,
     sizeWeight: 10,
-    sizeWeightUnit: {label: "gm", value: "gm"},
+    sizeWeightUnit: {label: "inch", value: "inch"},
     availableQuantity: 5,
     purchasePrice: 1500,
     salePrice: 500
@@ -22,11 +22,11 @@ const existingProduct = {
 
 const newProduct = {
     barcodeNo: 55660022,
-    productName: "New product",
-    supplierName: "New supplier",
+    productName: "",
+    supplierName: "",
     designNumber: 0,
     sizeWeight: 0,
-    sizeWeightUnit: {label: "mm", value: "mm"},
+    sizeWeightUnit: {label: "inch", value: "inch"},
     availableQuantity: 1,
     purchasePrice: 0,
     salePrice: 0

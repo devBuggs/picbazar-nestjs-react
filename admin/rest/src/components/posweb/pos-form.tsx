@@ -44,16 +44,25 @@ type PosFormTypes = {
         makeDuplicateFg?: boolean,
         inputBarcodeRef?: any,
         barcodeData?: any,
-    } 
+    },
+    setStateFlag: any
 }
 
-const PosForm = ({ createNewProduct, updateExistingProduct, makeDuplicate, printBarcode, saveToDraft, scanBarcode, stateFlag }: PosFormTypes) => {
+const PosForm = ({ 
+        createNewProduct,
+        updateExistingProduct,
+        makeDuplicate,
+        printBarcode,
+        saveToDraft,
+        scanBarcode,
+        stateFlag,
+        setStateFlag
+    }: PosFormTypes) => {
 
     const router = useRouter();
     const [actionType] = useState(router?.query?.action);
-    const [defaultValues] = useState( actionType === "edit" ? existingProduct : newProduct )
+    const [defaultValues] = useState( actionType === "edit" ? existingProduct : newProduct );
 
-    // console.warn("POS form action :: ", actionType, "\nInitial Values :: ", defaultValues);
 
     const {
         register,
@@ -63,18 +72,19 @@ const PosForm = ({ createNewProduct, updateExistingProduct, makeDuplicate, print
         control
     } = useForm<FormValues>({defaultValues});
 
-    const onSubmit: SubmitHandler<FormValues> = async (getValues) => await createNewProduct(getValues);
+    React.useEffect(() => {
+        console.log("updating formData =======>", getValues);
+        
+        setStateFlag({...stateFlag, formDate: {getValues}});
+    }, []);
+
+    const onSubmit: SubmitHandler<FormValues> = async (getValues) => createNewProduct(getValues);
+    const onSubmitUpdate: SubmitHandler<FormValues> = async (getValues) => updateExistingProduct(getValues);
     
     const { t } = useTranslation();
 
     return (
         <>
-            <Card className='mb-5'>
-                {
-                    actionType === "create" ? <h3 className='text-xl'>POS PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT POS PRODUCT ENTRY</h3>
-                }
-            </Card>
-
             <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 ">
                 <Description
                     title={t('Product Information')}
@@ -84,30 +94,19 @@ const PosForm = ({ createNewProduct, updateExistingProduct, makeDuplicate, print
 
                 <form className="w-full sm:w-8/12 md:w-3/3" onSubmit={(e) => e.preventDefault() }>
                     <Card >
-                        {
-                            actionType === "edit" ? 
-                                <div className="text-end mb-5">
-                                    <Button onClick={scanBarcode}>
-                                        {t('Scan Barcode')}
-                                    </Button>
-                                </div> : '' 
-                        }
-                        
-                        {
-                            stateFlag?.printBarcodeFg === true ? <svg ref={stateFlag?.barcodeData} id="barcode"></svg> : ""
-                        }
-                        
-
-                        <Input
-                            label={t('Barcode No.')}
-                            {...register('barcodeNo', {
-                                required: true,
-                            })}
-                            variant="outline"
-                            className="mb-5"
-                            disabled={true}
-                            error={t(errors.barcodeNo?.message!)}
-                            />
+                        <div>
+                            <Input
+                                label={t('Barcode No.')}
+                                {...register('barcodeNo', {
+                                    required: true,
+                                })}
+                                variant="outline"
+                                className="mb-5"
+                                disabled={true}
+                                error={t(errors.barcodeNo?.message!)}
+                                />
+                            {errors?.barcodeNo?.type === "required" && <p>This field is required</p>}
+                        </div>
 
                         <Input
                             label={t('Product Name')}
@@ -118,6 +117,7 @@ const PosForm = ({ createNewProduct, updateExistingProduct, makeDuplicate, print
                             className="mb-5"
                             error={t(errors.productName?.message!)}
                             />
+                        {errors?.firstName?.type === "required" && <p>This field is required</p>}
 
                         <Input
                             label={t('Supplier Name')}
@@ -223,7 +223,7 @@ const PosForm = ({ createNewProduct, updateExistingProduct, makeDuplicate, print
                             {actionType === "create" && <Button type='button' onClick={saveToDraft} className='mr-2'>{t('Draft')}</Button>}
 
                             {actionType === "edit"
-                                ? <Button type='submit' onClick={handleSubmit(onSubmit)}>{t('form:button-label-update')}</Button>
+                                ? <Button type='submit' onClick={handleSubmit(onSubmitUpdate)}>{t('form:button-label-update')}</Button>
                                 : <Button type='submit' onClick={handleSubmit(onSubmit)}>{t('form:button-label-save')}</Button>
                             }
 
