@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "@nestjs/mapped-types": "*"
+  },
   "name": "pickbazar-react",
   "version": "9.0.0",
   "license": "MIT",

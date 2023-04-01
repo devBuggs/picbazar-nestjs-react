@@ -34,6 +34,8 @@ import { WebHookModule } from './web-hook/web-hook.module';
 import { WishlistsModule } from './wishlists/wishlists.module';
 import { WithdrawsModule } from './withdraws/withdraws.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { PosProductsModule } from './pos-products/pos-products.module';
+import { WebProductsModule } from './web-products/web-products.module';
 
 @Module({
   imports: [
@@ -75,6 +77,8 @@ import { MongooseModule } from '@nestjs/mongoose';
     WebHookModule,
     PaymentModule,
     MongooseModule.forRoot('mongodb://localhost:27017/pickbazar-posweb'),
+    PosProductsModule,
+    WebProductsModule,
   ],
   controllers: [],
   providers: [],
