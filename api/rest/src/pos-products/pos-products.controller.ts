@@ -19,16 +19,16 @@ export class PosProductsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.posProductsService.findOne(+id);
+    return this.posProductsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePosProductDto: UpdatePosProductDto) {
-    return this.posProductsService.update(+id, updatePosProductDto);
+    return this.posProductsService.update(id, updatePosProductDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.posProductsService.remove(+id);
+    return this.posProductsService.remove(id);
   }
 }
