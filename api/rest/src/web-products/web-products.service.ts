@@ -1,26 +1,35 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from "@nestjs/mongoose";
+import { Model } from "mongoose";
 import { CreateWebProductDto } from './dto/create-web-product.dto';
 import { UpdateWebProductDto } from './dto/update-web-product.dto';
+import { WebProducts, WebProductsDocument } from './schema/web-product.schema';
 
 @Injectable()
 export class WebProductsService {
-  create(createWebProductDto: CreateWebProductDto) {
-    return 'This action adds a new webProduct';
+
+  constructor(@InjectModel(WebProducts.name) private readonly webproductsModel: Model < WebProductsDocument > ) {}
+
+  async create(createWebProductDto: CreateWebProductDto): Promise < WebProductsDocument > {
+    const webProduct = new this.webproductsModel(createWebProductDto);
+    return webProduct.save();
   }
 
-  findAll() {
-    return `This action returns all webProducts`;
+  
+  async findAll(): Promise < WebProductsDocument[] > {
+    return this.webproductsModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} webProduct`;
+  async findOne(id: string) {
+    let webObject = await this.webproductsModel.findById(id).exec();
+    return webObject;
   }
 
-  update(id: number, updateWebProductDto: UpdateWebProductDto) {
-    return `This action updates a #${id} webProduct`;
+  async update(id: string, updateWebProductDto: UpdateWebProductDto) {
+    return this.webproductsModel.findByIdAndUpdate(id, updateWebProductDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} webProduct`;
+  async remove(id: string) {
+    return this.webproductsModel.findByIdAndDelete(id);
   }
 }
