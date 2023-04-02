@@ -1,7 +1,6 @@
 import Card from '@/components/common/card';
 import Layout from '@/components/layouts/admin';
 import React, { useState } from 'react';
-import Search from '@/components/common/search';
 import { adminOnly } from '@/utils/auth-utils';
 import PosForm from '@/components/posweb/pos-form';
 import { GetStaticProps } from 'next';
@@ -10,7 +9,23 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import JsBarcode from "jsbarcode";
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useRouter } from 'next/router';
+import { getPosProducts, createPosProduct, updatePosProduct, deletePosProduct } from '@/assets/pos_web/api/posApis';
+import { useQuery, useMutation, useQueryClient } from 'react-query';
+import { useForm } from 'react-hook-form';
+import { newProduct, unitOptions } from '@/utils/constants/pos-web';
+import { setValues } from 'framer-motion/types/render/utils/setters';
 
+type FormValues = {
+    barcodeNo: number;
+    productName: string;
+    supplierName: string;
+    designNumber: number;
+    sizeWeight: number;
+    sizeWeightUnit: object;
+    availableQuantity: number;
+    purchasePrice: number;
+    salePrice: number;
+};
 
 export default function CreatePosProductPage() {
     const { t } = useTranslation();
@@ -24,15 +39,59 @@ export default function CreatePosProductPage() {
         barcodeData: React.useRef(null),
         editPosAction: router?.query?.action === 'edit' ? true : false,
         formData: {
-            barcodeNo: 500000000,
-            productName: "Dummy Product 001",
-            supplierName: "Ecorpin Corp.",
-            designNumber: 56020001,
-            sizeWeight: 11,
+            id: null,
+            barcodeNo: null,
+            productName: null,
+            supplierName: null,
+            designNumber: null,
+            sizeWeight: null,
             sizeWeightUnit: {label: "inch", value: "inch"},
-            availableQuantity: 2,
-            purchasePrice: 9999,
-            salePrice: 8099
+            availableQuantity: null,
+            purchasePrice: null,
+            salePrice: null
+        }
+    });
+    const queryClient = useQueryClient();
+    const [defaultValues] = useState( actionType === "edit" ? stateFlag.formData : newProduct );
+
+    const { 
+        register, 
+        setValue, 
+        handleSubmit, 
+        formState: { errors },
+        getValues,
+        control
+    } = useForm<FormValues>({defaultValues});
+
+    const {
+        isLoading,
+        isError,
+        error,
+        data: posProducts
+    } = useQuery('getPosProducts', getPosProducts );
+
+    const createPosProductMutation = useMutation(createPosProduct, {
+        onSuccess: () => {
+            // Invalidates the cache and refetch
+            queryClient.invalidateQueries("getPosProducts");
+            setValue('barcodeNo', parseInt("500000000"));
+            setValue('productName', "");
+            setValue('supplierName', "");
+            setValue('designNumber', 0);
+            setValue('sizeWeight', 0);
+            setValue('sizeWeightUnit', {  });
+            setValue('availableQuantity', 0);
+            setValue('purchasePrice', 0);
+            setValue('salePrice', 0);
+            setStateFlag({...stateFlag, printBarcodeFg: false, editPosAction: false, barcodeData: React.useRef(null)})
+        }
+    });
+
+    const updatePosProductMutation = useMutation(updatePosProduct, {
+        onSuccess: () => {
+            // Invalidates the cache and refetch
+            queryClient.invalidateQueries("getPosProducts")
+            setStateFlag({...stateFlag, makeDuplicateFg: true});
         }
     });
 
@@ -41,18 +100,54 @@ export default function CreatePosProductPage() {
     }
 
     // working
-    const createNewProduct = (formData: object) => {
+    const createNewProduct = (formData: FormValues) => {
         console.log("========== Create New Product ==========");
         console.log("form data :: ", formData);
-        // setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
-        JsBarcode(stateFlag?.barcodeData?.current, formData?.barcodeNo, {
-            format: 'CODE128',
-            displayValue: true,
-        });
+        setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
+        
+        if ( actionType === 'create' || (!stateFlag.editPosAction) ) {
+            JsBarcode(stateFlag?.barcodeData?.current, formData?.barcodeNo, {
+                format: 'CODE128',
+                displayValue: true,
+            });
+    
+            let newPosObject = {
+                barcodeNo: formData?.barcodeNo,
+                productName: formData?.productName,
+                supplierName: formData?.supplierName,
+                designNumber: formData?.designNumber,
+                sizeWeight: formData?.sizeWeight,
+                availableQuantity: formData?.availableQuantity,
+                purchasePrice: formData?.purchasePrice,
+                salePrice: formData?.salePrice,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            }
+            createPosProductMutation.mutate(newPosObject);
+        }
     }
 
-    const updateExistingProduct = () => {
+    const updateExistingProduct = (formData: FormValues) => {
         console.log("========== Update Existing Product ==========");
+        setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
+        
+        if ( actionType === 'edit' || stateFlag.editPosAction ) {
+            let updatePosObject = {
+                id: stateFlag?.formData?.id,
+                barcodeNo: formData?.barcodeNo,
+                productName: formData?.productName,
+                supplierName: formData?.supplierName,
+                designNumber: formData?.designNumber,
+                sizeWeight: formData?.sizeWeight,
+                availableQuantity: formData?.availableQuantity,
+                purchasePrice: formData?.purchasePrice,
+                salePrice: formData?.salePrice,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            }
+            updatePosProductMutation.mutate(updatePosObject);
+        }
+        
     }
 
     // done
@@ -85,17 +180,56 @@ export default function CreatePosProductPage() {
                 fps: 20
             }, false);
             const success = (result: any) => {
-                console.log("Result :: ", result);
+                console.log("Scan Result :: ", result);
+                // console.log("state : ", stateFlag);
+                
                 document.getElementById('result')?.innerHTML = `
                     <h2>Scan Success!</h2>
                     ${ result }
                 `;
                 scanner.clear();
                 document.getElementById("reader")?.remove();
+                
+                let filteredResult = posProducts.filter( (item: any) => item.barcodeNo ===  parseInt(result));
+                // console.log("filteredResult => ", filteredResult);
+                
+                if (filteredResult?.length > 0) {
+                    const tempObject = filteredResult[0];
+                    // console.log("trying to writing data to form.... tempObject : ", tempObject);
+                    setValue('barcodeNo', parseInt(tempObject.barcodeNo));
+                    setValue('productName', tempObject?.productName);
+                    setValue('supplierName', tempObject?.supplierName);
+                    setValue('designNumber', tempObject?.designNumber);
+                    setValue('sizeWeight', tempObject?.sizeWeight);
+                    setValue('sizeWeightUnit', tempObject?.sizeWeightUnit);
+                    setValue('availableQuantity', tempObject?.availableQuantity);
+                    setValue('purchasePrice', tempObject?.purchasePrice);
+                    setValue('salePrice', tempObject?.salePrice);
+
+                    setStateFlag({...stateFlag, printBarcodeFg: true });
+
+                    setStateFlag({...stateFlag, formData: {
+                        id: tempObject._id,
+                        barcodeNo: tempObject.barcodeNo,
+                        productName: tempObject.productName,
+                        supplierName: tempObject.supplierName,
+                        designNumber: tempObject.designNumber,
+                        sizeWeight: tempObject.sizeWeight,
+                        sizeWeightUnit: tempObject.sizeWeightUnit,
+                        availableQuantity: tempObject.availableQuantity,
+                        purchasePrice: tempObject.purchasePrice,
+                        salePrice: tempObject.salePrice
+                    }});
+
+                    JsBarcode(stateFlag?.barcodeData?.current, result, {
+                        format: 'CODE128',
+                        displayValue: true,
+                    });
+                }
             }
             const error = (error: any) => {
-                console.error("Result :: ", error);
-                setStateFlag({...stateFlag, });
+                console.error("Scan Error :: ", error);
+                // setStateFlag({...stateFlag, });
             }
             scanner.render(success, error);
         } else {
@@ -108,12 +242,12 @@ export default function CreatePosProductPage() {
         <>
             <Card className='mb-5'>
                 {
-                    actionType  ? <h3 className='text-xl'>POS PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT POS PRODUCT ENTRY</h3>
+                    actionType === 'create' ? <h3 className='text-xl'>POS PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT POS PRODUCT ENTRY</h3>
                 }
             </Card>
 
             {
-                actionType === "edit" ? 
+                stateFlag?.editPosAction ? 
                     <div className="text-end mb-5">
                         <div>
                             <div id="reader"></div>
@@ -131,6 +265,7 @@ export default function CreatePosProductPage() {
                 scanBarcode={handleScanBarcode}
                 stateFlag={stateFlag}
                 setStateFlag={setStateFlag}
+                formHook={{ register: register, handleSubmit: handleSubmit, errors: errors, getValues: getValues, setValue: setValue, control: control, unitOptions: unitOptions }}
                 />
         </>
     );

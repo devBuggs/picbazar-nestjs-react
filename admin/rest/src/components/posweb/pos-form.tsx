@@ -1,24 +1,14 @@
 import Button from '@/components/ui/button';
 import Input from '@/components/ui/input';
-import { Controller, useFieldArray, useForm, SubmitHandler } from 'react-hook-form';
+import { SubmitHandler } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
-import { yupResolver } from '@hookform/resolvers/yup';
 import Description from '@/components/ui/description';
 import Card from '@/components/common/card';
-import FileInput from '@/components/ui/file-input';
-import TextArea from '@/components/ui/text-area';
-import { getFormattedImage } from '@/utils/get-formatted-image';
-import { useCreateShopMutation, useUpdateShopMutation } from '@/data/shop';
-import GooglePlacesAutocomplete from '@/components/form/google-places-autocomplete';
 import Label from '@/components/ui/label';
-import { getIcon } from '@/utils/get-icon';
-import omit from 'lodash/omit';
-// import {PosInitialValues } from '@/types';
 import SelectInput from '../ui/select-input';
 import React, { useState } from 'react';
 
 import { useRouter } from 'next/router';
-import { unitOptions, newProduct, existingProduct } from '@/utils/constants/pos-web';
 
 type FormValues = {
     barcodeNo: number;
@@ -44,8 +34,11 @@ type PosFormTypes = {
         makeDuplicateFg?: boolean,
         inputBarcodeRef?: any,
         barcodeData?: any,
+        editPosAction?: boolean,
+        formData?: object,
     },
-    setStateFlag: any
+    setStateFlag: any,
+    formHook: any
 }
 
 const PosForm = ({ 
@@ -56,27 +49,22 @@ const PosForm = ({
         saveToDraft,
         scanBarcode,
         stateFlag,
-        setStateFlag
+        setStateFlag,
+        formHook,
     }: PosFormTypes) => {
 
     const router = useRouter();
     const [actionType] = useState(router?.query?.action);
-    const [defaultValues] = useState( actionType === "edit" ? existingProduct : newProduct );
 
 
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        errors,
         getValues,
-        control
-    } = useForm<FormValues>({defaultValues});
-
-    React.useEffect(() => {
-        console.log("updating formData =======>", getValues);
-        
-        setStateFlag({...stateFlag, formDate: {getValues}});
-    }, []);
+        control,
+        unitOptions
+    } = formHook;
 
     const onSubmit: SubmitHandler<FormValues> = async (getValues) => createNewProduct(getValues);
     const onSubmitUpdate: SubmitHandler<FormValues> = async (getValues) => updateExistingProduct(getValues);
@@ -94,6 +82,10 @@ const PosForm = ({
 
                 <form className="w-full sm:w-8/12 md:w-3/3" onSubmit={(e) => e.preventDefault() }>
                     <Card >
+                        {
+                            stateFlag?.printBarcodeFg === true ? <svg ref={stateFlag?.barcodeData} id="barcode"></svg> : ""
+                        }
+
                         <div>
                             <Input
                                 label={t('Barcode No.')}
@@ -162,7 +154,7 @@ const PosForm = ({
                                     control={control}
                                     options={unitOptions}
                                     isClearable={true}
-                                    defaultValue={defaultValues.sizeWeightUnit}
+                                    defaultValue={unitOptions.sizeWeightUnit}
                                     // error={t(errors.sizeWeightUnit?.message!)}
                                     />
                             </div>
@@ -208,10 +200,12 @@ const PosForm = ({
                                 : t('Make Duplicate')}
                             </Button>
 
-                            <Button type='button' disabled={stateFlag?.printBarcodeFg ? false : true} className='mr-2' onClick={printBarcode}>
-                                {actionType === "edit"
-                                ? t('Print Barcode')
-                                : t('Print Barcode')}
+                            <Button 
+                                type='button' 
+                                disabled={stateFlag?.printBarcodeFg ? false : true} 
+                                className='mr-2' 
+                                onClick={printBarcode}>
+                                {t('Print Barcode')}
                             </Button>
 
                             <Button type='button' className='mr-2' onClick={() => console.log("Add New Button Clicked!!!")}>
