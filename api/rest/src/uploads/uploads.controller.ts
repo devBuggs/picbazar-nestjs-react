@@ -14,7 +14,7 @@ export class UploadsController {
   @Post()
   @UseInterceptors(FilesInterceptor('attachment[]'))
   uploadFile(@UploadedFiles() attachment: Array<Express.Multer.File>) {
-    console.log(attachment);
+    console.log("Uploaded Content ===>>", attachment);
     return [
       {
         id: '883',

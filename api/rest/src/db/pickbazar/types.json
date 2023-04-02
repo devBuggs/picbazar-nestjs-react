@@ -50,8 +50,8 @@
         "description": "Get your healthy foods & snacks delivered at your doorsteps all day everyday",
         "image": {
           "id": 907,
-          "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/904/grocery.png",
-          "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/904/conversions/grocery-thumbnail.jpg"
+          "original": "/kalasham_banner.jpg",
+          "thumbnail": "/kalasham_banner.jpg"
         },
         "created_at": "2021-07-17T13:21:55.000000Z",
         "updated_at": "2021-07-17T13:21:55.000000Z"

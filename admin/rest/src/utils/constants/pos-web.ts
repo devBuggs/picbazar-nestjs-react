@@ -27,7 +27,7 @@ const newProduct = {
     designNumber: 0,
     sizeWeight: 0,
     sizeWeightUnit: {label: "inch", value: "inch"},
-    availableQuantity: 1,
+    availableQuantity: 0,
     purchasePrice: 0,
     salePrice: 0
 }

@@ -11,7 +11,7 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
   const { logo, siteTitle } = useSettings();
   return (
     <Link
-      href={siteSettings.logo.href}
+      href={siteSettings.logo}
       className={cn('inline-flex', className)}
       {...props}
     >

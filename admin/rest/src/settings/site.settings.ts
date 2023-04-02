@@ -2,19 +2,19 @@ import { adminAndOwnerOnly, adminOwnerAndStaffOnly } from '@/utils/auth-utils';
 import { Routes } from '@/config/routes';
 
 export const siteSettings = {
-  name: 'PickBazar',
+  name: 'Kalasham',
   description: '',
   logo: {
-    url: '/logo.svg',
-    alt: 'PickBazar',
+    url: '/logo-200.webp',
+    alt: 'Kalasham-logo',
     href: '/',
     width: 128,
     height: 40,
   },
   defaultLanguage: 'en',
   author: {
-    name: 'RedQ, Inc.',
-    websiteUrl: 'https://redq.io',
+    name: 'Ecorpin Corp.',
+    websiteUrl: 'https://ecorpin.web.app',
     address: '',
   },
   headerLinks: [],
