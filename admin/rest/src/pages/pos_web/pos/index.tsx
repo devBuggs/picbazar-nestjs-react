@@ -13,7 +13,7 @@ import { getPosProducts, createPosProduct, updatePosProduct, deletePosProduct } 
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { useForm } from 'react-hook-form';
 import { newProduct, unitOptions } from '@/utils/constants/pos-web';
-import { setValues } from 'framer-motion/types/render/utils/setters';
+import { generateBarcode } from '@/utils/common';
 
 type FormValues = {
     barcodeNo: number;
@@ -33,11 +33,12 @@ export default function CreatePosProductPage() {
     const [actionType] = useState(router?.query?.action);
 
     const [stateFlag, setStateFlag] = React.useState({ 
+        actionType: router?.query?.action,
+        editPosAction: router?.query?.action === 'edit' ? true : false,
         printBarcodeFg: false, 
         makeDuplicateFg: false,
         inputBarcodeRef: React.useRef(null),
         barcodeData: React.useRef(null),
-        editPosAction: router?.query?.action === 'edit' ? true : false,
         formData: {
             id: null,
             barcodeNo: null,
@@ -52,7 +53,7 @@ export default function CreatePosProductPage() {
         }
     });
     const queryClient = useQueryClient();
-    const [defaultValues] = useState( actionType === "edit" ? stateFlag.formData : newProduct );
+    const [defaultValues] = useState( actionType === "edit" ? stateFlag.formData : {...newProduct, barcodeNo: generateBarcode()} );
 
     const { 
         register, 
@@ -127,6 +128,7 @@ export default function CreatePosProductPage() {
         }
     }
 
+    // Z
     const updateExistingProduct = (formData: FormValues) => {
         console.log("========== Update Existing Product ==========");
         setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
