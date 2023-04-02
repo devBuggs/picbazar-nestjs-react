@@ -51,21 +51,48 @@ type FormValues = {
     category: string;
 };
 
+type PosFormTypes = { 
+    createNewProduct?: any, 
+    updateExistingProduct?: any, 
+    printBarcode?: any, 
+    stateFlag: {
+        printBarcodeFg?: boolean,
+        makeDuplicateFg?: boolean,
+        inputBarcodeRef?: any,
+        barcodeData?: any,
+        editPosAction?: boolean,
+        formData?: object,
+    },
+    setStateFlag: any,
+    formHook: any
+}
+
 type StepFormTypes = {
     title: string;
     control: any;
     actionType: any;
     register: any;
     errors: any;
+    stateFlag: any;
+    setStateFlag: any;
+    handleSubmit: any; 
+    onSubmitUpdate: any;
+    onSubmit: any;
+    printBarcode: any;
 }
 
-const WebForm = ({ initialValues }: { initialValues?: any }) => {
+const WebForm = ({ 
+    createNewProduct,
+    updateExistingProduct,
+    printBarcode,
+    stateFlag,
+    setStateFlag,
+    formHook, }: PosFormTypes) => {
 
     const router = useRouter();
     const [actionType] = useState(router?.query?.action);
     const [defaultValues] = useState( actionType === "edit" ? existingWebProduct : newWebProduct )
 
-    // console.warn("WEB form action :: ", actionType, "\nInitial Values :: ", defaultValues);
 
     const {
         register,
@@ -75,7 +102,8 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
         control
     } = useForm<FormValues>({defaultValues});
 
-    const onSubmit: SubmitHandler<FormValues> = data => console.log("=>>>>>", data);
+    const onSubmit: SubmitHandler<FormValues> = async (getValues) => createNewProduct(getValues);
+    const onSubmitUpdate: SubmitHandler<FormValues> = async (getValues) => updateExistingProduct(getValues);
     
     const { t } = useTranslation();
 
@@ -84,24 +112,82 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
         const nextBtnStyle = `color: #ffffff; background: #009F7F; margin: 0px 15px; padding: 0px 20px; width: 120px; border: 1px solid #009f7f; border-radius: 5%; height: 48px; float: right;`
         document.getElementsByTagName('form')[0][1].setAttribute('style', prevBtnStyle);
         document.getElementsByTagName('form')[0][2].setAttribute('style', nextBtnStyle);
-    });
+    }, []);
 
     return (
         <>
-            <Card className='mb-5'>
-                {
-                    actionType === "create" ? <h3 className='text-xl'>WEB PRODUCT ENTRY</h3> : <h3 className='text-xl'>EDIT WEB PRODUCT ENTRY</h3>
-                }
-            </Card>
-            
             <Card>
+                {
+                    stateFlag?.printBarcodeFg === true ? <svg ref={stateFlag?.barcodeData} id="barcode"></svg> : ""
+                }
+
                 <form className={'web-product'} onSubmit={handleSubmit(onSubmit)}>
                     <MultiStep showNavigation={true} activeStep={0} showTitles={true} >
-                        <StepOne title='StepOne' control={control} actionType={actionType} register={register} errors={errors} />
-                        <StepTwo title='StepTwo' control={control} actionType={actionType} register={register} errors={errors} />
-                        <StepThree title='StepThree' control={control} actionType={actionType} register={register} errors={errors} />
-                        <StepFour title='StepFour' control={control} actionType={actionType} register={register} errors={errors} />
-                        <StepFive title='StepFive' control={control} actionType={actionType} register={register} errors={errors} />
+                        <StepOne 
+                            title='StepOne' 
+                            control={control} 
+                            actionType={actionType} 
+                            register={register} 
+                            errors={errors} 
+                            stateFlag={stateFlag} 
+                            setStateFlag={setStateFlag}
+                            handleSubmit = {handleSubmit} 
+                            onSubmitUpdate = {onSubmitUpdate} 
+                            onSubmit={onSubmit}
+                            printBarcode={printBarcode}
+                            />
+                        <StepTwo 
+                            title='StepTwo' 
+                            control={control} 
+                            actionType={actionType} 
+                            register={register} 
+                            errors={errors} 
+                            stateFlag={stateFlag} 
+                            setStateFlag={setStateFlag}
+                            handleSubmit = {handleSubmit} 
+                            onSubmitUpdate = {onSubmitUpdate} 
+                            onSubmit={onSubmit}
+                            printBarcode={printBarcode}
+                            />
+                        <StepThree 
+                            title='StepThree' 
+                            control={control} 
+                            actionType={actionType} 
+                            register={register} 
+                            errors={errors} 
+                            stateFlag={stateFlag} 
+                            setStateFlag={setStateFlag}
+                            handleSubmit = {handleSubmit} 
+                            onSubmitUpdate = {onSubmitUpdate} 
+                            onSubmit={onSubmit}
+                            printBarcode={printBarcode}
+                            />
+                        <StepFour 
+                            title='StepFour' 
+                            control={control} 
+                            actionType={actionType} 
+                            register={register} 
+                            errors={errors} 
+                            stateFlag={stateFlag} 
+                            setStateFlag={setStateFlag}
+                            handleSubmit = {handleSubmit} 
+                            onSubmitUpdate = {onSubmitUpdate} 
+                            onSubmit={onSubmit}
+                            printBarcode={printBarcode}
+                            />
+                        <StepFive 
+                            title='StepFive' 
+                            control = {control} 
+                            actionType = {actionType} 
+                            register = {register} 
+                            errors = {errors} 
+                            stateFlag = {stateFlag} 
+                            setStateFlag = {setStateFlag}
+                            handleSubmit = {handleSubmit} 
+                            onSubmitUpdate = {onSubmitUpdate} 
+                            onSubmit={onSubmit}
+                            printBarcode={printBarcode}
+                            />
                     </MultiStep>
                 </form>
             </Card>
@@ -111,7 +197,7 @@ const WebForm = ({ initialValues }: { initialValues?: any }) => {
 
 export default WebForm;
 
-const StepOne = ({title, control, actionType, register, errors}: StepFormTypes) => {
+const StepOne = ({title, control, actionType, register, errors, stateFlag, setStateFlag}: StepFormTypes) => {
     const { t } = useTranslation();
     return (
         <>
@@ -170,7 +256,7 @@ const StepOne = ({title, control, actionType, register, errors}: StepFormTypes) 
     )
 }
 
-const StepTwo = ({title, control, actionType, register, errors}: StepFormTypes) => {
+const StepTwo = ({title, control, actionType, register, errors, stateFlag, setStateFlag}: StepFormTypes) => {
     const { t } = useTranslation();
     return (
         <>
@@ -197,7 +283,7 @@ const StepTwo = ({title, control, actionType, register, errors}: StepFormTypes) 
     )
 }
 
-const StepThree = ({title, control, actionType, register, errors }: StepFormTypes) => {
+const StepThree = ({title, control, actionType, register, errors, stateFlag, setStateFlag}: StepFormTypes) => {
     const { t } = useTranslation();
 
     return (
@@ -271,7 +357,7 @@ const StepThree = ({title, control, actionType, register, errors }: StepFormType
     )
 }
 
-const StepFour = ({title, control, actionType, register, errors}: StepFormTypes) => {
+const StepFour = ({title, control, actionType, register, errors, stateFlag, setStateFlag}: StepFormTypes) => {
     const { t } = useTranslation();
 
     return (
@@ -409,7 +495,7 @@ const StepFour = ({title, control, actionType, register, errors}: StepFormTypes)
     )
 }
 
-const StepFive = ({title, control, actionType, register, errors}: StepFormTypes) => {
+const StepFive = ({title, control, actionType, register, errors, stateFlag, setStateFlag, handleSubmit, onSubmitUpdate, onSubmit, printBarcode}: StepFormTypes) => {
     const { t } = useTranslation();
 
     return (
@@ -501,27 +587,33 @@ const StepFive = ({title, control, actionType, register, errors}: StepFormTypes)
                     <hr/>
 
                     <div className='flex flex-row flex-wrap my-3'>
-                        <Button type='button' className='mr-2 mb-2'>
-                            {t('Add New')}
+                        <Button type='button' className='mr-2' onClick={() => console.log("Add New Button Clicked!!!")}>
+                            {actionType === "edit"
+                            ? t('Add New')
+                            : t('Add New')}
                         </Button>
 
-                        <Button type='button' className='mr-2 mb-2'>
-                            {t('Save & Publish')}
+                        {actionType === "create" && <Button type='button' onClick={() => console.log("Save product to draft button clicked!!!")} className='mr-2'>{t('Draft')}</Button>}
+
+                        {actionType === "edit"
+                            ? <Button type='submit' onClick={handleSubmit(onSubmitUpdate)}>{t('form:button-label-update')}</Button>
+                            : <Button type='submit' onClick={handleSubmit(onSubmit)}>{t('form:button-label-save')}</Button>
+                        }
+
+                        <Button type='button' disabled={ stateFlag?.makeDuplicateFg ? false : true} className='mr-2' onClick={() => console.log("Make duplicate button clicked!!!.")}>
+                            {actionType === "edit"
+                            ? t('Make Duplicate')
+                            : t('Make Duplicate')}
                         </Button>
 
-                        <Button type='button' className='mr-2 mb-2'>
-                            {t('Save to Draft')}
-                        </Button>
-
-                        <Button type='button' className='mr-2 mb-2'>
+                        <Button 
+                            type='button' 
+                            disabled={stateFlag?.printBarcodeFg ? false : true} 
+                            className='mr-2' 
+                            onClick={printBarcode}>
                             {t('Print Barcode')}
                         </Button>
-
-                        <Button type='button' className='mr-2 mb-2'>
-                            {t('Make Duplicate')}
-                        </Button>
                     </div>
-
                 </Card>
             </div>
         </>
