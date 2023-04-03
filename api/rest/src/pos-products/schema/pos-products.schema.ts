@@ -18,7 +18,19 @@ export class PosProducts {
     designNumber: string;
 
     @Prop()
-    sizeHeight: number;
+    sizeWeight: number;
+
+    @Prop({ type: Object })
+    sizeWeightUnit: object;
+
+    @Prop()
+    brandManufacturer: string;
+
+    @Prop()
+    status: boolean;
+
+    @Prop()
+    draft: boolean
 
     @Prop()
     availableQuantity: number;
