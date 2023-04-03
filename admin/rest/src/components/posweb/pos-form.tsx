@@ -17,6 +17,9 @@ type FormValues = {
     designNumber: number;
     sizeWeight: number;
     sizeWeightUnit: object;
+    brandManufacturer: string;
+    status: boolean;
+    draft: boolean;
     availableQuantity: number;
     purchasePrice: number;
     salePrice: number;
@@ -109,25 +112,25 @@ const PosForm = ({
                             className="mb-5"
                             error={t(errors.productName?.message!)}
                             />
-                        {errors?.firstName?.type === "required" && <p>This field is required</p>}
+                        {errors?.productName?.type === "required" && <p>This field is required</p>}
 
-                        <Input
-                            label={t('Supplier Name')}
-                            {...register('supplierName', {
-                                required: true,
-                                maxLength: 20,
-                                pattern: /^[A-Za-z]+$/i
-                            })}
-                            variant="outline"
-                            className="mb-5"
-                            error={t(errors.supplierName?.message!)}
-                            />
+                        <div>
+                            <Input
+                                label={t('Supplier Name')}
+                                {...register('supplierName', {
+                                    required: true
+                                })}
+                                variant="outline"
+                                className="mb-5"
+                                error={t(errors.supplierName?.message!)}
+                                />
+                            {errors?.supplierName?.type === "required" && <p>This field is required</p>}
+                        </div>
 
                         <Input
                             label={t('Design Number')}
                             {...register('designNumber', {
-                                required: true,
-                                maxLength: 20,
+                                required: true
                             })}
                             variant="outline"
                             className="mb-5"
@@ -139,8 +142,7 @@ const PosForm = ({
                                 className="flex-grow mr-2"
                                 label={t('Size/Weight')}
                                 {...register('sizeWeight', {
-                                    required: true,
-                                    maxLength: 20,
+                                    required: true
                                 })}
                                 variant="outline"
                                 // className="mb-5 flex-grow"
@@ -153,6 +155,9 @@ const PosForm = ({
                                     name={'unit'}
                                     control={control}
                                     options={unitOptions}
+                                    {...register('sizeWeightUnit', {
+                                        required: true
+                                    })}
                                     isClearable={true}
                                     defaultValue={unitOptions.sizeWeightUnit}
                                     // error={t(errors.sizeWeightUnit?.message!)}
@@ -160,14 +165,26 @@ const PosForm = ({
                             </div>
                         </div>
 
+                        <div>
+                            <Input
+                                label={t('Brand / Manufacturer')}
+                                {...register('brandManufacturer', {
+                                    required: true
+                                })}
+                                variant="outline"
+                                className="mb-5"
+                                error={t(errors.brandManufacturer?.message!)}
+                                />
+                            {errors?.brandManufacturer?.type === "required" && <p>This field is required</p>}
+                        </div>
+
                         <Input
                             label={t('Available Quantity')}
                             {...register('availableQuantity', {
-                                required: true,
-                                maxLength: 20,
+                                required: true
                             })}
                             variant="outline"
-                            className="mb-5"
+                            className="mb-5 mt-5"
                             error={t(errors.availableQuantity?.message!)}
                             />
 

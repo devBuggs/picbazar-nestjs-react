@@ -22,6 +22,9 @@ type FormValues = {
     designNumber: number;
     sizeWeight: number;
     sizeWeightUnit: object;
+    brandManufacturer: string;
+    status: boolean;
+    draft: boolean;
     availableQuantity: number;
     purchasePrice: number;
     salePrice: number;
@@ -40,21 +43,24 @@ export default function CreatePosProductPage() {
         inputBarcodeRef: React.useRef(null),
         barcodeData: React.useRef(null),
         formData: {
-            id: null,
+            id: "",
             barcodeNo: null,
             productName: null,
             supplierName: null,
             designNumber: null,
             sizeWeight: null,
-            sizeWeightUnit: {label: "inch", value: "inch"},
+            sizeWeightUnit: { label: "inch", value: "inch" },
+            brandManufacturer: null,
+            status: false,
+            draft: false,
             availableQuantity: null,
             purchasePrice: null,
             salePrice: null
         }
     });
     const queryClient = useQueryClient();
-    const [defaultValues] = useState( actionType === "edit" ? stateFlag.formData : {...newProduct, barcodeNo: generateBarcode()} );
-
+    const newBarcodeNo = generateBarcode();
+    const [defaultValues] = useState( actionType === "edit" ? stateFlag.formData : {...newProduct, barcodeNo: parseInt(newBarcodeNo)} );
     const { 
         register, 
         setValue, 
@@ -62,7 +68,7 @@ export default function CreatePosProductPage() {
         formState: { errors },
         getValues,
         control
-    } = useForm<FormValues>({defaultValues});
+    } = useForm<FormValues>({ defaultValues });
 
     const {
         isLoading,
@@ -75,16 +81,15 @@ export default function CreatePosProductPage() {
         onSuccess: () => {
             // Invalidates the cache and refetch
             queryClient.invalidateQueries("getPosProducts");
-            setValue('barcodeNo', parseInt("500000000"));
-            setValue('productName', "");
-            setValue('supplierName', "");
-            setValue('designNumber', 0);
-            setValue('sizeWeight', 0);
-            setValue('sizeWeightUnit', {  });
-            setValue('availableQuantity', 0);
-            setValue('purchasePrice', 0);
-            setValue('salePrice', 0);
-            setStateFlag({...stateFlag, printBarcodeFg: false, editPosAction: false, barcodeData: React.useRef(null)})
+            // setValue('barcodeNo', parseInt("500000000"));
+            // setValue('productName', "");
+            // setValue('supplierName', "");
+            // setValue('designNumber', 0);
+            // setValue('sizeWeight', 0);
+            // setValue('sizeWeightUnit', { label: 'mm', value: 'mm' });
+            // setValue('availableQuantity', 0);
+            // setValue('purchasePrice', 0);
+            // setValue('salePrice', 0);
         }
     });
 
@@ -92,7 +97,7 @@ export default function CreatePosProductPage() {
         onSuccess: () => {
             // Invalidates the cache and refetch
             queryClient.invalidateQueries("getPosProducts")
-            setStateFlag({...stateFlag, makeDuplicateFg: true});
+            // setStateFlag({...stateFlag, makeDuplicateFg: true});
         }
     });
 
@@ -101,30 +106,40 @@ export default function CreatePosProductPage() {
     }
 
     // working
-    const createNewProduct = (formData: FormValues) => {
+    const createNewProduct = async (formData: FormValues) => {
         console.log("========== Create New Product ==========");
         console.log("form data :: ", formData);
         setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
         
-        if ( actionType === 'create' || (!stateFlag.editPosAction) ) {
+        if ( actionType === 'create' && (!stateFlag.editPosAction) ) {
             JsBarcode(stateFlag?.barcodeData?.current, formData?.barcodeNo, {
                 format: 'CODE128',
                 displayValue: true,
             });
     
             let newPosObject = {
-                barcodeNo: formData?.barcodeNo,
+                barcodeNo: formData?.barcodeNo.toString(),
                 productName: formData?.productName,
                 supplierName: formData?.supplierName,
                 designNumber: formData?.designNumber,
                 sizeWeight: formData?.sizeWeight,
+                sizeWeightUnit: formData?.sizeWeightUnit,
+                brandManufacturer: formData?.brandManufacturer,
+                status: false,
+                draft: false,
                 availableQuantity: formData?.availableQuantity,
                 purchasePrice: formData?.purchasePrice,
                 salePrice: formData?.salePrice,
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
             }
-            createPosProductMutation.mutate(newPosObject);
+            await createPosProductMutation.mutate(newPosObject);
+            setStateFlag(
+                {...stateFlag, 
+                    printBarcodeFg: true, 
+                    makeDuplicateFg: true
+                }
+            )
         }
     }
 
@@ -133,7 +148,7 @@ export default function CreatePosProductPage() {
         console.log("========== Update Existing Product ==========");
         setStateFlag({...stateFlag, printBarcodeFg: true, formData: formData});
         
-        if ( actionType === 'edit' || stateFlag.editPosAction ) {
+        if ( actionType === 'edit' && stateFlag.editPosAction ) {
             let updatePosObject = {
                 id: stateFlag?.formData?.id,
                 barcodeNo: formData?.barcodeNo,
@@ -141,6 +156,10 @@ export default function CreatePosProductPage() {
                 supplierName: formData?.supplierName,
                 designNumber: formData?.designNumber,
                 sizeWeight: formData?.sizeWeight,
+                sizeWeightUnit: formData?.sizeWeightUnit,
+                brandManufacturer: formData?.brandManufacturer,
+                status: false,
+                draft: false,
                 availableQuantity: formData?.availableQuantity,
                 purchasePrice: formData?.purchasePrice,
                 salePrice: formData?.salePrice,
@@ -173,7 +192,7 @@ export default function CreatePosProductPage() {
 
     React.useLayoutEffect(() => {
         if (actionType === "edit") {
-            console.log("useEffect only for edit pos");
+            console.log("useEffect only for edit pos action");
             const scanner = new Html5QrcodeScanner('reader', {
                 qrbox: {
                     width: 300,
@@ -203,7 +222,10 @@ export default function CreatePosProductPage() {
                     setValue('supplierName', tempObject?.supplierName);
                     setValue('designNumber', tempObject?.designNumber);
                     setValue('sizeWeight', tempObject?.sizeWeight);
-                    setValue('sizeWeightUnit', tempObject?.sizeWeightUnit);
+                    setValue('sizeWeightUnit', { label: tempObject?.sizeWeightUnit, value: tempObject?.sizeWeightUnit });
+                    setValue('brandManufacturer', tempObject?.brandManufacturer);
+                    setValue('status', tempObject?.status);
+                    setValue('draft', tempObject?.draft);
                     setValue('availableQuantity', tempObject?.availableQuantity);
                     setValue('purchasePrice', tempObject?.purchasePrice);
                     setValue('salePrice', tempObject?.salePrice);
@@ -218,6 +240,9 @@ export default function CreatePosProductPage() {
                         designNumber: tempObject.designNumber,
                         sizeWeight: tempObject.sizeWeight,
                         sizeWeightUnit: tempObject.sizeWeightUnit,
+                        brandManufacturer: tempObject.brandManufacturer,
+                        status: tempObject.status,
+                        draft: tempObject.draft,
                         availableQuantity: tempObject.availableQuantity,
                         purchasePrice: tempObject.purchasePrice,
                         salePrice: tempObject.salePrice
@@ -235,7 +260,7 @@ export default function CreatePosProductPage() {
             }
             scanner.render(success, error);
         } else {
-            console.log("useEffect only for create pos");
+            console.log("useEffect only for create pos action");
         }
         
     }, [stateFlag.editPosAction])

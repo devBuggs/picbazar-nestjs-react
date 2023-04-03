@@ -36,7 +36,7 @@ export default function HomePage() {
             </Card>
 
             <Card className="mb-8 flex flex-col items-center justify-between md:flex-row">
-                <PosWebMenu pos_web_menu={[]}/>
+                <PosWebMenu />
             </Card>
 
         </>

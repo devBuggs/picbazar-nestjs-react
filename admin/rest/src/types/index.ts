@@ -293,23 +293,13 @@ export interface Balance {
   payment_info?: PaymentInfo;
 }
 
-export interface PosWebMenu {
-  id: string;
-  label: string;
-  style: object;
-  actionType: string;
-  pathName: string;
-}
+// POS - WEB System Types
 
-export interface PosInitialValues {
-  barcodeNo: number;
-  productName: string;
-  supplierName: string;
-  designNumber: number;
-  sizeWeight: number;
-  availableQuantity: number;
-  purchasePrice: number;
-  salePrice: number;
+export interface PosProductType {
+  // TODO: frontend pos product type
+}
+export interface WebProductType {
+  // TODO: frontend web product type
 }
 
 export interface WebInitialValues {

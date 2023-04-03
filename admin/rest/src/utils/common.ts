@@ -1,6 +1,4 @@
-
-
-export const generateBarcode = async () => {
+export const generateBarcode = () => {
     // Create a new Date object for the current date
     let date = new Date();
 
@@ -19,6 +17,5 @@ export const generateBarcode = async () => {
     let result = dateString + randomNumber.toString().padStart(3, '0');
 
     // Return the result
-    console.log(JSON.stringify(result));
-    return parseInt(result);
+    return result;
 }
