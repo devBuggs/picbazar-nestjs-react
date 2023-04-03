@@ -14,7 +14,10 @@ const existingProduct = {
     supplierName: "Bhagwan Singh",
     designNumber: 56020001,
     sizeWeight: 10,
-    sizeWeightUnit: {label: "inch", value: "inch"},
+    sizeWeightUnit: { label: "inch", value: "inch" },
+    brandManufacturer: "Ecorpin Corp",
+    draft: false,
+    status: false,
     availableQuantity: 5,
     purchasePrice: 1500,
     salePrice: 500
@@ -22,14 +25,17 @@ const existingProduct = {
 
 const newProduct = {
     barcodeNo: 55660022,
-    productName: "",
-    supplierName: "",
-    designNumber: 0,
-    sizeWeight: 0,
-    sizeWeightUnit: {label: "inch", value: "inch"},
-    availableQuantity: 0,
-    purchasePrice: 0,
-    salePrice: 0
+    productName: null,
+    supplierName: null,
+    designNumber: null,
+    sizeWeight: null,
+    sizeWeightUnit: { label: "inch", value: "inch" },
+    brandManufacturer: null,
+    draft: false,
+    status: false,
+    availableQuantity: null,
+    purchasePrice: null,
+    salePrice: null
 }
 
 const existingWebProduct = {
