@@ -191,7 +191,7 @@ export default function CreatePosProductPage() {
     }
 
     React.useLayoutEffect(() => {
-        if (actionType === "edit") {
+        if (actionType === "edit" && stateFlag.editPosAction) {
             console.log("useEffect only for edit pos action");
             const scanner = new Html5QrcodeScanner('reader', {
                 qrbox: {
@@ -222,7 +222,7 @@ export default function CreatePosProductPage() {
                     setValue('supplierName', tempObject?.supplierName);
                     setValue('designNumber', tempObject?.designNumber);
                     setValue('sizeWeight', tempObject?.sizeWeight);
-                    setValue('sizeWeightUnit', { label: tempObject?.sizeWeightUnit, value: tempObject?.sizeWeightUnit });
+                    setValue('sizeWeightUnit', { label: tempObject?.sizeWeightUnit.label, value: tempObject?.sizeWeightUnit.value });
                     setValue('brandManufacturer', tempObject?.brandManufacturer);
                     setValue('status', tempObject?.status);
                     setValue('draft', tempObject?.draft);

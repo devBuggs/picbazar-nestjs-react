@@ -74,6 +74,9 @@ const PosForm = ({
     
     const { t } = useTranslation();
 
+    console.log("@@===> ", stateFlag?.printBarcodeFg, "===> ", stateFlag?.formData.id );
+    
+
     return (
         <>
             <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 ">
@@ -86,7 +89,7 @@ const PosForm = ({
                 <form className="w-full sm:w-8/12 md:w-3/3" onSubmit={(e) => e.preventDefault() }>
                     <Card >
                         {
-                            stateFlag?.printBarcodeFg === true ? <svg ref={stateFlag?.barcodeData} id="barcode"></svg> : ""
+                            (stateFlag?.printBarcodeFg === true) || (stateFlag?.formData?.id !== null) ? <svg ref={stateFlag?.barcodeData} id="barcode"></svg> : ""
                         }
 
                         <div>
@@ -172,7 +175,7 @@ const PosForm = ({
                                     required: true
                                 })}
                                 variant="outline"
-                                className="mb-5"
+                                className="mb-5 mt-5"
                                 error={t(errors.brandManufacturer?.message!)}
                                 />
                             {errors?.brandManufacturer?.type === "required" && <p>This field is required</p>}
