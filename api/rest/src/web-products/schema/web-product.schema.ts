@@ -8,11 +8,11 @@ export class WebProducts {
     @Prop()
     barcodeNo: number;
 
-    @Prop()
-    productGAlleryImage:  string;
+    @Prop({ type: Object })
+    productGAlleryImage:  object;
 
-    @Prop()
-    productMediaItems: Array<string>;
+    @Prop({ type: Array<Object>})
+    productMediaItems: Array<object>;
 
     @Prop()
     productName: string;
@@ -23,20 +23,14 @@ export class WebProducts {
     @Prop()
     productSizeWeight: number;
 
-    @Prop()
-    productSizeWeightUnit: string
+    @Prop({ type: Object })
+    productSizeWeightUnit: object
 
     @Prop()
     supplierName: string;
 
     @Prop()
     designNumber: number;
-
-    @Prop()
-    width: number;
-
-    @Prop()
-    height: number;
 
     @Prop()
     brandMenufacturer: string;

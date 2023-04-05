@@ -1,23 +1,21 @@
 export class WebProduct {
     barcodeNo: number;
-    productGAlleryImage: string;
-    productMediaItems: Array<string>;
+    productGAlleryImage:  object;
+    productMediaItems: Array<object>;
     productName: string;
     productDescription: string;
     productSizeWeight: number;
-    productSizeWeightUnit: string;
+    productSizeWeightUnit: object
     supplierName: string;
     designNumber: number;
-    width: number;
-    height: number;
     brandMenufacturer: string;
     availableQuantity: number;
-    productQuantityUnit: number;
+    productQuantityUnit: string;
     purchasePrice: number;
     salePrice: number;
     tags: string;
     variationFg: boolean;
-    variationData: object;
+    variationData:  object;
     category: string;
     createdAt: Date;
     updatedAt: Date;
