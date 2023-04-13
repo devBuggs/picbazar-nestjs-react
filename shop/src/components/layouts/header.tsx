@@ -67,9 +67,9 @@ const Header = ({ layout }: { layout?: string }) => {
             ''
           )}
 
-          <div className="hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block">
+          {/* <div className="hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block">
             <GroupsDropdownMenu />
-          </div>
+          </div> */}
         </div>
         {isHomePage ? (
           <>
@@ -87,16 +87,16 @@ const Header = ({ layout }: { layout?: string }) => {
           </>
         ) : null}
         <ul className="hidden shrink-0 items-center space-x-7 rtl:space-x-reverse lg:flex 2xl:space-x-10">
-          <StaticMenu />
+          {/* <StaticMenu /> */}
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
-            <a
+            {/* <a
               href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-9 shrink-0 items-center justify-center rounded border border-transparent bg-accent px-3 py-0 text-sm font-semibold leading-none text-light outline-none transition duration-300 ease-in-out hover:bg-accent-hover focus:shadow focus:outline-none focus:ring-1 focus:ring-accent-700"
             >
-              {t('text-become-seller')}
-            </a>
+              {t('Register / Login')}
+            </a> */}
             <li>{isAuthorize ? <AuthorizedMenu /> : <JoinButton />}</li>
           </div>
           {isMultilangEnable ? (
