@@ -54,6 +54,9 @@ export class Product extends CoreEntity {
   my_review?: Review[];
   language?: string;
   translated_languages?: string[];
+  barcode_no?: string;
+  supplier_name: string;
+  design_number: number;
 }
 
 export class OrderProductPivot {
