@@ -6,34 +6,77 @@ import { UpdateCategoryDto } from './dto/update-category.dto';
 import { Category } from './entities/category.entity';
 import Fuse from 'fuse.js';
 import categoriesJson from '@db/categories.json';
+import typesJson from '@db/types.json';
 import { paginate } from 'src/common/pagination/paginate';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Categories, CategoriesDocument } from './schema/categories.schema';
+import slugify from 'slugify';
 
 const categories = plainToClass(Category, categoriesJson);
+const storeType = typesJson[0];
 const options = {
   keys: ['name', 'type.slug'],
   threshold: 0.3,
 };
-const fuse = new Fuse(categories, options);
+// const fuse = new Fuse(categories, options);
 
 @Injectable()
 export class CategoriesService {
-  private categories: Category[] = categories;
+  constructor(@InjectModel(Categories.name) private readonly categoriesModel: Model < CategoriesDocument > ) {}
 
   create(createCategoryDto: CreateCategoryDto) {
-    return this.categories[0];
+    var newCategory = new this.categoriesModel(createCategoryDto);
+    return newCategory.save();
   }
 
-  getCategories({ limit, page, search, parent }: GetCategoriesDto) {
+  async getCategories({ limit, page, search, parent }: GetCategoriesDto) {
     if (!page) page = 1;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
-    let data: Category[] = this.categories;
+
+    var categoriesDB : any =  await this.categoriesModel.find();
+
+    if (categoriesDB.length > 0) {
+      categoriesDB = await categoriesDB.map((item:any) => {
+        const { _id, name, parent, details, image, icon, language } = item?._doc;
+
+        return {
+          id: _id,
+          name: name,
+          slug: slugify(name.toLowerCase()),
+          icon: icon,
+          image: [image],
+          details: details,
+          language: language,
+          translated_languages: [
+            "en"
+          ],
+          parent: parent,
+          type_id: 1,
+          created_at: "2021-03-08T07:21:31.000000Z",
+          updated_at: "2021-03-08T07:21:31.000000Z",
+          deleted_at: null,
+          parent_id: null,
+          type: storeType,
+          children: []
+        }
+      });
+    }
+
+    const mCategories = categories.concat(categoriesDB);
+    const fuse = await new Fuse(mCategories, options);
+
+    let data: Category[] = mCategories;
+    
     if (search) {
       const parseSearchParams = search.split(';');
       for (const searchParam of parseSearchParams) {
         const [key, value] = searchParam.split(':');
         // data = data.filter((item) => item[key] === value);
-        data = fuse.search(value)?.map(({ item }) => item);
+        // data = await fuse.search(value)?.map(({ item }) => item);
+        const searchResult = fuse.search(value);
+        data = searchResult ? searchResult.map(({ item }) => item) : data;
       }
     }
     if (parent === 'null') {
@@ -54,17 +97,23 @@ export class CategoriesService {
     };
   }
 
-  getCategory(param: string, language: string): Category {
-    return this.categories.find(
-      (p) => p.id === Number(param) || p.slug === param,
+  async findAll(): Promise < CategoriesDocument[] > {
+    const category = await this.categoriesModel.find();
+    return category
+  }
+
+  getCategory(param: string, language: string): Promise < CategoriesDocument[] > {
+    const data = this.categoriesModel.find(
+      (p:any) => p.id === Number(param) || p.slug === param,
     );
+    return data;
   }
 
-  update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return this.categories[0];
+  update(id: string, updateCategoryDto: UpdateCategoryDto) {
+    return this.categoriesModel.findByIdAndUpdate(id, updateCategoryDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} category`;
+  remove(id: string) {
+    return this.categoriesModel.findByIdAndDelete(id);
   }
 }

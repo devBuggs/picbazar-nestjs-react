@@ -29,6 +29,7 @@ import {
   useUpdateCategoryMutation,
 } from '@/data/category';
 import { useTypesQuery } from '@/data/type';
+import slugify from 'slugify';
 
 export const updatedIcons = categoryIcons.map((item: any) => {
   item.label = (
@@ -176,6 +177,7 @@ export default function CreateOrUpdateCategoriesForm({
     const input = {
       language: router.locale,
       name: values.name,
+      slug: slugify(values?.name.toString()),
       details: values.details,
       image: {
         thumbnail: values?.image?.thumbnail,
@@ -185,6 +187,10 @@ export default function CreateOrUpdateCategoriesForm({
       icon: values.icon?.value || '',
       parent: values.parent?.id ?? null,
       type_id: values.type?.id,
+      translated_languages: [
+        "en"
+      ],
+      // children: []
     };
     if (
       !initialValues ||
@@ -192,7 +198,7 @@ export default function CreateOrUpdateCategoriesForm({
     ) {
       createCategory({
         ...input,
-        ...(initialValues?.slug && { slug: initialValues.slug }),
+        // ...(initialValues?.slug && { slug: initialValues.slug }),
       });
     } else {
       updateCategory({
