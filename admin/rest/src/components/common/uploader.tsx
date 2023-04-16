@@ -42,8 +42,7 @@ export default function Uploader({
               data &&
                 data?.map((file: any, idx: any) => {
                   const splitArray = file?.original?.split('/');
-                  let fileSplitName =
-                    splitArray[splitArray?.length - 1]?.split('.');
+                  let fileSplitName = splitArray[splitArray?.length - 1]?.split('.');
                   const fileType = fileSplitName?.pop(); // it will pop the last item from the fileSplitName arr which is the file ext
                   const filename = fileSplitName?.join('.'); // it will join the array with dot, which restore the original filename
                   data[idx]['file_name'] = filename + '.' + fileType;
