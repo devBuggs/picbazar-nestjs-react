@@ -21,8 +21,8 @@ export function getEnv(
   name: keyof EnvVariables
 ): EnvVariables[keyof EnvVariables] {
   const val = process.env[name];
-  if (!val) {
-    throw new Error(`Cannot find environmental variable: ${name}`);
-  }
-  return val;
+  // if (!val) {
+  //   throw new Error(`Cannot find environmental variable: ${name}`);
+  // }
+  return val ?? "development";
 }
