@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
 
 export class CoreEntity {
-  id: number;
+  id: any;
   @Type(() => Date)
   created_at: Date;
   @Type(() => Date)

@@ -8,12 +8,12 @@ import { Tag } from 'src/tags/entities/tag.entity';
 import { Type } from 'src/types/entities/type.entity';
 import { Review } from '../../reviews/entities/review.entity';
 
-enum ProductStatus {
+export enum ProductStatus {
   PUBLISH = 'publish',
   DRAFT = 'draft',
 }
 
-enum ProductType {
+export enum ProductType {
   SIMPLE = 'simple',
   VARIABLE = 'variable',
 }
@@ -22,7 +22,7 @@ export class Product extends CoreEntity {
   name: string;
   slug: string;
   type: Type;
-  type_id: number;
+  type_id: any;
   product_type: ProductType;
   categories: Category[];
   tags?: Tag[];
@@ -31,7 +31,7 @@ export class Product extends CoreEntity {
   pivot?: OrderProductPivot;
   orders?: Order[];
   shop: Shop;
-  shop_id: number;
+  shop_id: any;
   related_products?: Product[];
   description: string;
   in_stock: boolean;
