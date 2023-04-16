@@ -30,7 +30,7 @@ import Search from '../common/search';
 
 type FormValues = {
     barcodeNo: number;
-    productGalleryImage: any;
+    productImage: any;
     productMediaItems: any;
     productName: string;
     productDescription: string;
@@ -79,6 +79,7 @@ type StepFormTypes = {
     onSubmitUpdate: any;
     onSubmit: any;
     printBarcode: any;
+    watch: any;
 }
 
 const WebForm = ({ 
@@ -97,10 +98,11 @@ const WebForm = ({
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        errors,
         getValues,
-        control
-    } = useForm<FormValues>({defaultValues});
+        control,
+        watch
+    } = formHook;
 
     const onSubmit: SubmitHandler<FormValues> = async (getValues) => createNewProduct(getValues);
     const onSubmitUpdate: SubmitHandler<FormValues> = async (getValues) => updateExistingProduct(getValues);
@@ -112,7 +114,7 @@ const WebForm = ({
         const nextBtnStyle = `color: #ffffff; background: #009F7F; margin: 0px 15px; padding: 0px 20px; width: 120px; border: 1px solid #009f7f; border-radius: 5%; height: 48px; float: right;`
         document.getElementsByTagName('form')[0][1].setAttribute('style', prevBtnStyle);
         document.getElementsByTagName('form')[0][2].setAttribute('style', nextBtnStyle);
-    }, []);
+    }, [actionType]);
 
     return (
         <>
@@ -135,6 +137,7 @@ const WebForm = ({
                             onSubmitUpdate = {onSubmitUpdate} 
                             onSubmit={onSubmit}
                             printBarcode={printBarcode}
+                            watch={watch}
                             />
                         <StepTwo 
                             title='StepTwo' 
@@ -148,6 +151,7 @@ const WebForm = ({
                             onSubmitUpdate = {onSubmitUpdate} 
                             onSubmit={onSubmit}
                             printBarcode={printBarcode}
+                            watch={watch}
                             />
                         <StepThree 
                             title='StepThree' 
@@ -161,6 +165,7 @@ const WebForm = ({
                             onSubmitUpdate = {onSubmitUpdate} 
                             onSubmit={onSubmit}
                             printBarcode={printBarcode}
+                            watch={watch}
                             />
                         <StepFour 
                             title='StepFour' 
@@ -174,6 +179,7 @@ const WebForm = ({
                             onSubmitUpdate = {onSubmitUpdate} 
                             onSubmit={onSubmit}
                             printBarcode={printBarcode}
+                            watch={watch}
                             />
                         <StepFive 
                             title='StepFive' 
@@ -187,6 +193,7 @@ const WebForm = ({
                             onSubmitUpdate = {onSubmitUpdate} 
                             onSubmit={onSubmit}
                             printBarcode={printBarcode}
+                            watch={watch}
                             />
                     </MultiStep>
                 </form>
@@ -197,7 +204,7 @@ const WebForm = ({
 
 export default WebForm;
 
-const StepOne = ({title, control, actionType, register, errors, stateFlag, setStateFlag}: StepFormTypes) => {
+const StepOne = ({title, control, actionType, register, errors, stateFlag, setStateFlag, watch}: StepFormTypes) => {
     const { t } = useTranslation();
     return (
         <>
@@ -243,13 +250,29 @@ const StepOne = ({title, control, actionType, register, errors, stateFlag, setSt
                 <Card className="w-full sm:w-8/12 md:w-2/3">
                     <FileInput 
                         control={control} 
-                        {...register('productGalleryImage', {
+                        {...register('productImage', {
+                            required: false
+                        })}
+                        name="productImage" 
+                        multiple={false} 
+                        error={t(errors.productImage?.message!)}
+                        accept={'image/*'}
+                        onChange={(data:any) => {
+                            console.log("stateFlag ==> ", stateFlag, "\narg:: ", data);
+                            setStateFlag({...stateFlag, formData: {...stateFlag.formData, productGallery: data} })
+                        }}
+                        />
+                    {errors?.productImage?.type === "required" && <p>This field is required</p>}
+                    {/* <input 
+                        type="file" 
+                        name={'productImage'} 
+                        id={'input-productImage'} 
+                        {...register('productImage', {
                             required: true
                         })}
-                        name="productGalleryImage" 
-                        multiple={false} 
-                        error={t(errors.productGalleryImage?.message!)}
-                        />
+                        accept={'image/*'}
+                        multiple={false} required />
+                    {errors?.productImage?.type === "required" && <p>This field is required</p>} */}
                 </Card>
             </div>
         </>
@@ -258,6 +281,7 @@ const StepOne = ({title, control, actionType, register, errors, stateFlag, setSt
 
 const StepTwo = ({title, control, actionType, register, errors, stateFlag, setStateFlag}: StepFormTypes) => {
     const { t } = useTranslation();
+    
     return (
         <>
             <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
@@ -273,8 +297,12 @@ const StepTwo = ({title, control, actionType, register, errors, stateFlag, setSt
                         name="logo"  
                         multiple={true} 
                         {...register('productMediaItems', {
-                            required: true
+                            required: false
                         })}
+                        onChange={(data:any) => {
+                            console.log("uploaded action ", data);
+                            setStateFlag({...stateFlag, formData: {...stateFlag.formData, productGallery: data} })
+                        }}
                         error={t(errors.productMediaItems?.message!)}
                         />
                 </Card>
@@ -394,7 +422,7 @@ const StepFour = ({title, control, actionType, register, errors, stateFlag, setS
                         <Input
                             label={t('Width')}
                             {...register('width', {
-                                required: true
+                                required: false
                             })}
                             variant="outline"
                             className="mb-5 w-full mr-1"
@@ -404,7 +432,7 @@ const StepFour = ({title, control, actionType, register, errors, stateFlag, setS
                         <Input
                             label={t('Height')}
                             {...register('height', {
-                                required: true
+                                required: false
                             })}
                             variant="outline"
                             className="mb-5 w-full ml-1"
@@ -423,7 +451,7 @@ const StepFour = ({title, control, actionType, register, errors, stateFlag, setS
                         /> */}
 
                         <div className='flex flex-row'>
-                            <div className="flex-grow mr-1 mb-5">
+                            {/* <div className="flex-grow mr-1 mb-5">
                                 <Label>{t('Brand/Manufacturer')}</Label>
                                 <SelectInput
                                     name={'brandMenufacturer'}
@@ -435,7 +463,17 @@ const StepFour = ({title, control, actionType, register, errors, stateFlag, setS
                                     })}
                                     error={t(errors.brandMenufacturer?.message!)}
                                     />
-                            </div>
+                            </div> */}
+
+                            <Input
+                                label={t('Brand / Manufacturer')}
+                                {...register('brandMenufacturer', {
+                                    required: true
+                                })}
+                                variant="outline"
+                                className="mb-5"
+                                error={t(errors.brandMenufacturer?.message!)}
+                                />
 
                             <div className='sm:col-span-2 ml-1'>
                                 <Label>{t('Add Brand')}</Label>
@@ -524,7 +562,7 @@ const StepFive = ({title, control, actionType, register, errors, stateFlag, setS
                             control={control}
                             name={'productVariation'}
                             {...register('variationFg', {
-                                required: true
+                                required: false
                             })}
                             error={t(errors.tag?.message!)}
                             />
