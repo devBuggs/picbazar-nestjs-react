@@ -6,64 +6,159 @@ export type WebProductsDocument = WebProducts & Document;
 @Schema()
 export class WebProducts {
     @Prop()
-    barcodeNo: number;
+    barcode_no: number;
+
+    @Prop()
+    name:  string;
+
+    @Prop()
+    slug: string;
+
+    @Prop()
+    description: string;
+
+    @Prop()
+    type_id: string;
+
+    @Prop()
+    price: string;
+
+    @Prop()
+    shop_id: string;
+
+    @Prop()
+    sale_price: string;
+
+    @Prop()
+    language: string;
+
+    @Prop()
+    min_price: string;
+
+    @Prop()
+    max_price: string;
+
+    @Prop()
+    sku: string;
+
+    @Prop()
+    quantity: string;
+
+    @Prop()
+    in_stock: string;
+
+    @Prop()
+    is_taxable: string;
+
+    @Prop()
+    shipping_class_id: string;
+
+    @Prop()
+    status: string;
+
+    @Prop()
+    product_type: string;
+
+    @Prop()
+    unit: string;
+
+    @Prop()
+    height: string;
+
+    @Prop()
+    width: string;
+
+    @Prop()
+    length: string;
 
     @Prop({ type: Object })
-    productGAlleryImage:  object;
+    image: object;
 
-    @Prop({ type: Array<Object>})
-    productMediaItems: Array<object>;
+    @Prop({type: Array<Object>})
+    video: any;
 
-    @Prop()
-    productName: string;
-
-    @Prop()
-    productDescription: string;
+    @Prop({type: Array<Object>})
+    gallery: Array<object>;
 
     @Prop()
-    productSizeWeight: number;
-
-    @Prop({ type: Object })
-    productSizeWeightUnit: object
+    deleted_at: string; 
 
     @Prop()
-    supplierName: string;
+    created_at: string; 
 
     @Prop()
-    designNumber: number;
+    updated_at: string; 
 
     @Prop()
-    brandMenufacturer: string;
+    author_id: string; 
 
     @Prop()
-    availableQuantity: number;
+    manufacturer_id: string; 
 
     @Prop()
-    productQuantityUnit: string;
+    is_digital: number; 
 
     @Prop()
-    purchasePrice: number;
+    is_external: number; 
 
     @Prop()
-    salePrice: number;
+    external_product_url: string; 
 
     @Prop()
-    tags: string;
+    external_product_button_text: string; 
 
     @Prop()
-    variationFg: boolean;
-
-    @Prop({ type: Object })
-    variationData:  object;
+    ratings: string; 
 
     @Prop()
-    category: string;
+    total_reviews: number; 
+
+    @Prop({ type: Array<Object> })
+    rating_count: any; 
+
+    @Prop({type: Array<Object>})
+    my_review: any;
 
     @Prop()
-    createdAt: Date;
+    in_wishlist: boolean;
+
+    @Prop({type: Array<Object>})
+    blocked_dates: any;
+
+    @Prop({type: Array<Object>})
+    translated_languages: any;
+
+    @Prop({type: Array<Object>})
+    categories: any;
+
+    @Prop({type: Object})
+    shop: object;
+
+    @Prop({type: Object})
+    type: any;
+
+    @Prop({type: Array<Object>})
+    variations: any;
+
+    @Prop({type: Array<Object>})
+    metas: any;
+
+    @Prop({type: Array<Object>})
+    manufacturer: any;
+
+    @Prop({type: Array<Object>})
+    variation_options: any;
+
+    @Prop({type: Array<Object>})
+    tags: any;
+
+    @Prop({type: Array<Object>})
+    author: any;
 
     @Prop()
-    updatedAt: Date;
+    supplier_name: string;
+
+    @Prop()
+    design_number: number;
 }
-
 export const WebProductsSchema = SchemaFactory.createForClass(WebProducts);
