@@ -12,10 +12,17 @@ import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { GetCategoriesDto } from './dto/get-categories.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Products, ProductsDocument } from 'src/products/schema/products.schema';
+import { Model } from 'mongoose';
+import { ProductsService } from 'src/products/products.service';
 
 @Controller('categories')
 export class CategoriesController {
-  constructor(private readonly categoriesService: CategoriesService) {}
+  constructor(
+    private readonly categoriesService: CategoriesService,
+    @InjectModel(Products.name) private readonly productsModel: Model<ProductsDocument>,
+    ) {}
 
   @Post()
   create(@Body() createCategoryDto: CreateCategoryDto) {
@@ -24,7 +31,9 @@ export class CategoriesController {
 
   @Get()
   findAll(@Query() query: GetCategoriesDto) {
-    return this.categoriesService.getCategories(query);
+    const productService : any = new ProductsService(this.productsModel);
+    var products = productService.getProducts();
+    return this.categoriesService.getCategories(query, products);
   }
 
   @Get(':param')

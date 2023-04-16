@@ -30,16 +30,28 @@ export class CategoriesService {
     return newCategory.save();
   }
 
-  async getCategories({ limit, page, search, parent }: GetCategoriesDto) {
+  async getCategories(
+    getCategoriesDto: GetCategoriesDto,
+    products: any
+  ) {
+    var { limit, page, search, parent } = getCategoriesDto;
     if (!page) page = 1;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
     var categoriesDB : any =  await this.categoriesModel.find();
+    var productsDB : any = products;
 
     if (categoriesDB.length > 0) {
+      let children = []
       categoriesDB = await categoriesDB.map((item:any) => {
         const { _id, name, parent, details, image, icon, language } = item?._doc;
+
+        console.log("parent ::== ", parent);
+
+        if (parent){
+          productsDB = productsDB.filter((item:any) => item.id === parent[0])
+        }
 
         return {
           id: _id,
