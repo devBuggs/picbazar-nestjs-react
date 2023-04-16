@@ -4,7 +4,7 @@ const webProductsApi = axios.create({
     baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
 })
 
-export const getWebProducts = async () => {
+export const getWebProductsQuery = async () => {
     const response = await webProductsApi.get("/web-products");
     return response.data;
 }

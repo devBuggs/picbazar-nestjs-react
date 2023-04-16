@@ -1,5 +1,6 @@
 export const Routes = {
   dashboard: '/',
+  posWeb: '/pos-web',
   login: '/login',
   logout: '/logout',
   register: '/register',

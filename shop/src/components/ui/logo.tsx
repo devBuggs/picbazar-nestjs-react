@@ -12,7 +12,6 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
     settings: { logo, siteTitle },
   } : any = useSettings();
 
-  console.log("Logo :: ", logo, " siteTitle : ", siteTitle);
   return (
     <Link href="/" className={cn('inline-flex', className)} {...props}>
       <span className="relative h-10 w-32 overflow-hidden md:w-40">
