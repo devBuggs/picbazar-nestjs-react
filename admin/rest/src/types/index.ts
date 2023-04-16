@@ -251,6 +251,15 @@ export interface Attachment {
   thumbnail: string;
   original: string;
   id?: string;
+  
+  fieldname: string;
+  originalname: string,
+  encoding: string,
+  mimetype: string,
+  destination: string,
+  filename: string,
+  path: string,
+  size: number
 }
 
 export interface AttachmentInput {

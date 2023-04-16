@@ -28,13 +28,18 @@ export const siteSettings = {
       labelTransKey: 'authorized-nav-item-logout',
     },
   ],
-  currencyCode: 'USD',
+  currencyCode: 'INR',
   sidebarLinks: {
     admin: [
       {
         href: Routes.dashboard,
         label: 'sidebar-nav-item-dashboard',
         icon: 'DashboardIcon',
+      },
+      {
+        href: Routes.posWeb,
+        label: 'sidebar-nav-item-pos-web',
+        icon: 'ProductsIcon'
       },
       {
         href: Routes.shop.list,
@@ -142,6 +147,12 @@ export const siteSettings = {
         href: (shop: string) => `${Routes.dashboard}${shop}`,
         label: 'sidebar-nav-item-dashboard',
         icon: 'DashboardIcon',
+        permissions: adminOwnerAndStaffOnly,
+      },
+      {
+        href: (shop: string) => `${Routes.posWeb}${shop}`,
+        label: 'sidebar-nav-item-pos-web',
+        icon: 'ProductsIcon',
         permissions: adminOwnerAndStaffOnly,
       },
       {
